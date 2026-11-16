@@ -1,0 +1,52 @@
+:root {
+    --background: #F4F7FF;
+    --cinza-neutro: #3B4252;
+    --branco: #fdfdfd;
+    --azul-claro: #D3DFFF;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+html,
+body{
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 250px;
+    background-color: var(--background);
+    padding: 0;
+}
+
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--branco);
+
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    grid-area: 180px;
+}
+
+a{
+    text-decoration: none;
+}
+
+@media (max-width:480px){
+    .container{
+        padding: 0 16px;
+    }
+}
+
+@media (max-width: 1280px){
+    .container{
+        padding: 0 24px;
+    }
+}
