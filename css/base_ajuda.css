@@ -1,0 +1,21 @@
+html,
+body{
+    background: #F4F7FF;
+    background: linear-gradient(180deg, rgba(244, 247, 255, 1) 0%, rgba(255, 255, 255, 1) 31%);
+}
+.topics{
+    display: flex;
+    align-items: center;
+    border-radius: 24px;
+    border: solid 1px var(--azul-claro);
+    height: 50px;
+    color: var(--azul-principal);
+    background-color: var(--branco);
+    list-style: circle;
+    font-weight: 500;
+    flex-direction: row;
+    gap: 10px;
+}
+.bi-circle-fill{
+    font-size: 0.5rem;
+}

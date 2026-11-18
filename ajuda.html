@@ -7,6 +7,16 @@
     <!--CSS-->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/menu-acessibilidade.css">
+    <link rel="stylesheet" href="css/base_ajuda.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/lembrete.css">
+    <link rel="stylesheet" href="css/local.css">
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
+
+    <!--Script-->
+    <script src="js/mudar-secao.js" defer></script>
 
     <title>Ajuda</title>
 </head>
@@ -34,7 +44,8 @@
     <main class="main-content">
         <section id="hero-ajuda">
             <div class="box-hero">
-                <div class="topics">
+                <div class="topics hero-topic">
+                    <span class="bi bi-circle-fill"></span>
                     Atendimento presencial
                 </div>
                 <h1>
@@ -46,15 +57,17 @@
                     Lá, atendentes ajudam você a usar serviços pela internet, passo à passo.
                 </p>
                 <div id="checked-info">
+                    <span class="bi bi-check2-circle"></span>
                     O atendimento é gratuito
                 </div>
             </div>
             <div class="box-img">
-
+                <img src="images/midia/img-hero.png" id="img-ex">
             </div>
         </section>
         <section id="lembrete">
-            <div class="topics">
+            <div class="topics lembrete-topic">
+                <span class="bi bi-circle-fill"></span>
                 Antes de ir
             </div>
             <h2>
@@ -62,25 +75,28 @@
             </h2>
             <div class="flex-cards">
                 <div class="cards">
-                    <h4>
+                    <img src="images/icones/icone_agenda.png" class="icones-img">
+                    <h3>
                         Agende antes
-                    </h4>
-                    <p>
+                    </h3>
+                    <p class="cards-text">
                         Pelo site: descomplicasp.prefeitura.sp.gov.br ou pelo telefone 156.
                     </p>
                 </div>
                 <div class="cards">
-                    <h4>
+                    <img src="images/icones/icone_mensagem.png" class="icones-img">
+                    <h3>
                         Leve seus documentos
-                    </h4>
+                    </h3>
                     <p>
                         Leve seu RG e seu CPF.
                     </p>
                 </div>
                 <div class="cards">
-                    <h4>
+                    <img src="images/icones/icone_horario.png" class="icones-img">
+                    <h3>
                         Confira o horário
-                    </h4>
+                    </h3>
                     <p>
                         De segunda a sexta-feira, das 8h às 17h
                     </p>
@@ -88,142 +104,642 @@
             </div>
         </section>
         <section id="local">
-            <div class="topics">
+            <div class="topics local-topic">
+                <span class="bi bi-circle-fill"></span>
                 Unidades
             </div>
-            <div class="flex-row">
+            <div class="flex-row local-title">
                 <h2>
                     Encontre um local
                 </h2>
-                <p>
-                    Encontramos 5 locais na Zona Sul.
+                <p id="pesq-local">
+                    Encontramos 32 locais em SP.
                 </p>
             </div>
-            <h6>
-                Escolha a região da cidade
-            </h6>
-            <div class="flex-row">
-                <button>Todas</button>
-                <button>Zona Norte</button>
-                <button>Zona Sul</button>
-                <button>Zona Leste</button>
-                <button>Zona Oeste</button>
-            </div>
-            <div class="cards-flex">
-                <div class="cards-local">
-                    <h4>
-                        Descomplica SP Santo Amaro
-                    </h4>
-                    <p>
-                        Praça Floriano Peixoto, 54, Santo Amaro 
-                    </p>
-                    <small>
-                        Seg. a sex., 8h às 17h
-                    </small>
-                    <button>
-                        Ver no mapa
-                    </button>
-                    <a href="#">Como agendar</a>
-                </div>
-                <div class="cards-local">
-                    <h4>
-                        Descomplica SP Campo Limpo
-                    </h4>
-                    <p>
-                        Av. Giovanni Gronchi, 7143, Vila Andrade
-                    </p>
-                    <small>
-                        Seg. a sex., 8h às 17h
-                    </small>
-                    <button>
-                        Ver no mapa
-                    </button>
-                    <a href="#">Como agendar</a>
-                </div>
-                <div class="cards-local">
-                    <h4>
-                        Descomplica SP Capela do Socorro
-                    </h4>
-                    <p>
-                        Rua Cassiano dos Santos, 499, Jardim Cliper
-                    </p>
-                    <small>
-                        Seg. a sex., 8h às 17h
-                    </small>
-                    <button>
-                        Ver no mapa
-                    </button>
-                    <a href="#">Como agendar</a>
-                </div>
-            </div>
-            <div class="crads-flex">
-                <div class="cards-local">
-                    <h4>
-                        Descomplica SP Jabaquara
-                    </h4>
-                    <p>
-                        Av. Eng. Armando de Arruda Pereira, 2314, Jabaquara
-                    </p>
-                    <small>
-                        Seg. a sex., 8h às 17h
-                    </small>
-                    <button>
-                        Ver no mapa
-                    </button>
-                    <a href="#">Como agendar</a>
-                </div>
-                <div class="cards-local">
-                    <h4>
-                        Descomplica SP Ipiranga
-                    </h4>
-                    <p>
-                        Rua Breno Ferraz do Amaral, 425, Ipiranga
-                    </p>
-                    <small>
-                        Seg. a sex., 8h às 17h
-                    </small>
-                    <button>
-                        Ver no mapa
-                    </button>
-                    <a href="#">Como agendar</a>
-                </div>
-                <div class="cards-local">
-                    <h4>Não mora em São Paulo?</h4>
-                    <p>
-                        Procure a prefeitura da sua cidade ou o CRAS mais perto de você 
-                        e pergunte onde há ajuda presencial.
-                    </p>
-                    <small>
-                        Dúvidas sobre São Paulo: ligue 156.
-                    </small>
+            <div class="regioes-list">
+                <h4>
+                    Escolha a região da cidade
+                </h4>
+                <div class="flex-row gap-btn">
+                    <button class="btn-regioes" id="todosBtn">Todas</button>
+                    <button class="btn-regioes" id="btn1">Zona Norte</button>
+                    <button class="btn-regioes" id="btn2">Zona Sul</button>
+                    <button class="btn-regioes" id="btn3">Zona Leste</button>
+                    <button class="btn-regioes" id="btn4">Zona Oeste</button>
+                    <button class="btn-regioes" id="btn5">Centro</button>
                 </div>
             </div>
             <small>
                 Endereços conforme divulgados pela Prefeitura de São Paulo.
                 Confira no site do Descomplica SP antes de ir.
             </small>
+            <div class="secao-cards">
+                <div class="cards-flex" id="div-cards1">
+                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Casa Verde/Cachoeirinha
+                        </h4>
+                        <p>
+                            Avenida Ordem e Progresso, 1001 – Jardim das Laranjeiras
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/6nA0CNkpHsLvEHbgI'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Jaçanã
+                        </h4>
+                        <p>
+                            Avenida Luís Stamatis, 300 – Vila Constança
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/gTeQpV3XM7jnukheu'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Pirituba
+                        </h4>
+                        <p>
+                            Rua Paula Ferreira, 1708 – Vila Pirituba
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/RkdN5QpNMMzt0diwh'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                </div>
+                <div class="cards-flex" id="div-cards2">
+                                        <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Santana/Tucuruvi
+                        </h4>
+                        <p>
+                            Avenida Tucuruvi, 808 – Tucuruvi
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/oSge6Sw3CnhUpRyRP'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Vila Maria/Vila Guilherme
+                        </h4>
+                        <p>
+                            Rua General Mendes, 111 – Vila Maria Alta
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/7nAEbujmXnasgQ1Tg'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Campo Limpo
+                        </h4>
+                        <p>
+                            Avenida Giovanni Gronchi, 7143 – Vila Andrade
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/cqYnCrIFzt14exvMd'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                </div>
+                <div class="cards-flex" id="div-cards3">
+                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Capela do Socorro
+                        </h4>
+                        <p>
+                            Rua Cassiano dos Santos, 499 – Jardim Clipper
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/gZnspzubchCWI1DU2'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Cidade Ademar
+                        </h4>
+                        <p>
+                            Avenida Yervant Kissajikian, 416 – Vila Constância
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/1r8jgAUmPtaOmTqYL'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Ipiranga
+                        </h4>
+                        <p>
+                            Rua Breno Ferraz do Amaral, 425 – Ipiranga
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/9Si4FwXL5OwEL9Jjz'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                </div>
+                <div class="cards-flex" id="div-cards4">
+                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Jabaquara
+                        </h4>
+                        <p>
+                            Avenida Eng. Armando de Arruda Pereira, 2314 – Jabaquara
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/XdHtsA7ZjvtLW1azB'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP M'Boi Mirim
+                        </h4>
+                        <p>
+                            Avenida Guarapiranga, 1695 – Vila Socorro
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/OcKMQleRXZriKWJUN'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Parelheiros
+                        </h4>
+                        <p>
+                            Estrada Ecoturística de Parelheiros, 5252 – Jardim dos Álamos
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa"  onclick="window.location.href='https://share.google/RsVVJL0MrbS4oLxC7'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                </div>
+                <div class="cards-flex" id="div-cards5">
+                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Santo Amaro
+                        </h4>
+                        <p>
+                            Praça Floriano Peixoto, 54 – Santo Amaro
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/YX6yGHhwcCDuFfyYM'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Vila Mariana
+                        </h4>
+                        <p>
+                            Rua José de Magalhães, 500 – Vila Clementino
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/ROhKomuLH2gQecWSz'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Aricanduva
+                        </h4>
+                        <p>
+                            Avenida Aricanduva, 5777 – Aricanduva
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/S0lja44ENyjgnJEub'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                </div>
+                <div class="cards-flex" id="div-cards6">
+                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Cidade Tiradentes
+                        </h4>
+                        <p>
+                            Avenida Ragueb Chohfi, 7001 – Jardim Marilu
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/JhBCzp6KO9kRAt3oF'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Ermelino Matarazzo
+                        </h4>
+                        <p>
+                            Rua Boturussu, 1180 – Parque Boturussu
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/aITO3B35qjHTTcoX0'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Guaianases
+                        </h4>
+                        <p>
+                            Rua Copenhague, 92 – Guaianases
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/F2VJItfDNEidWMRyn'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                </div>
+                <div class="cards-flex" id="div-cards7">
+                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Itaim Paulista
+                        </h4>
+                        <p>
+                            Avenida Marechal Tito, 3012 – São Miguel Paulista
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/sQryo12OkOsyuugmG'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Itaquera
+                        </h4>
+                        <p>
+                            Avenida Itaquera, 6735 – Cidade Líder
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/Mm1XtA3YxZujZ1QgF'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Mooca
+                        </h4>
+                        <p>
+                            Rua Hipódromo, 1552 – Mooca
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/VC76sNyooVuYMIQH8'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                </div>
+                <div class="cards-flex" id="div-cards8">
+                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Penha
+                        </h4>
+                        <p>
+                            Rua Candapuí, 49 – Vila Marieta
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/NLIRiTFPjCAzDsOQu'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP São Mateus
+                        </h4>
+                        <p>
+                            Avenida Ragueb Chohfi, 1400 – Jardim Três Maria
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/NW7I9c2nR0aGpZ52T'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP São Miguel Paulista
+                        </h4>
+                        <p>
+                            Rua Dona Ana Flora de Sousa, 76 – Vila Jacuí
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/BuKGfUPiwZ6s9PaPl'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                </div>
+                <div class="cards-flex" id="div-cards9">
+
+                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Sapopemba
+                        </h4>
+                        <p>
+                            Avenida Sapopemba, 9064 – Jardim Adutora
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/Pg35cVRdGdURfZQ3n'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Vila Prudente
+                        </h4>
+                        <p>
+                            Avenida do Oratório, 172 – Jardim Independência.
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa"  onclick="window.location.href='https://share.google/3PoUHKzOrTvvafD81'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Butantã
+                        </h4>
+                        <p>
+                            Rua Dr. Ulpiano da Costa Manso, 201 – Jardim Peri Peri
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/1CxE4YJu8OH0Df2Yv'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                </div>
+                <div class="cards-flex" id="div-cards10">
+                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Freguesia do Ó/Brasilândia
+                        </h4>
+                        <p>
+                            Avenida João Marcelino Branco, 95 – Vila dos Andrades
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/6aHJameWBftnANbwD'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Lapa
+                        </h4>
+                        <p>
+                            Rua Guaicurus, 1000 – Vila Romana
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/9undgQkZ5k4jlztxl'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Pinheiros
+                        </h4>
+                        <p>
+                            Avenida Dra. Ruth Cardoso, 7123 – Pinheiro
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/cRCQVuGT0tXKJNffO'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                </div>
+                <div class="cards-flex" id="div-cards11">
+
+                                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP 24 horas
+                        </h4>
+                        <p>
+                            Rua Quinze de Novembro, 268 – Centro Histórico
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Todos os dias, durante 24h, exceto em feriados e Pontos Facultativos.
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/M8p1nroH8lyFPa2aF'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                    <div class="cards-local">
+                        <img src="/images/icones/icone_local.png" class="icone-local">
+                        <h4>
+                            Descomplica SP Sé
+                        </h4>
+                        <p>
+                            Rua Álvares Penteado, 49 – Centro Histórico
+                        </p>
+                        <small>
+                            <span class="bi bi-clock"></span> 
+                            Seg. a sex., 8h às 17h
+                        </small>
+                        <button class="btn-mapa" onclick="window.location.href='https://share.google/FkmUgAnp6Sd5pqfc0'">
+                            Ver no mapa
+                        </button>
+                        <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
+                    </div>
+                    <div class="cards-local card-local-mais">
+                        <img src="/images/icones/icone_global.png" class="icone-global">
+                        <h4>Não mora em São Paulo?</h4>
+                        <p>
+                            Procure a prefeitura da sua cidade ou o CRAS mais perto de você 
+                            e pergunte onde há ajuda presencial.
+                        </p>
+                        <small>
+                            Dúvidas sobre São Paulo: ligue 156.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
     </main>
-    <footer>
-        <div class="footer-menu">
-            <nav id="footerNav">
-                <a href="#inicio">Início</a>
-                <a href="#aprender">Aprender</a>
-                <a href="#praticar">Praticar</a>
-                <a href="#progresso">Meu progresso</a>
-                <a href="#ajuda">Ajuda perto de você</a>
+    <footer class="rodape">
+        <div class="container">
+        <div class="rodape__topo">
+            <a class="logo" href="index.html">
+            <svg aria-hidden="true"><use href="#logo-branco"/></svg>
+            <span>Passo Certo</span>
+            </a>
+            <nav aria-label="Rodapé">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="aprender.html">Aprender</a></li>
+                <li><a href="praticar.html">Praticar</a></li>
+                <li><a href="progresso.html">Meu progresso</a></li>
+                <li><a href="ajuda.html">Ajuda perto de você</a></li>
+            </ul>
             </nav>
         </div>
-        <div class="line-div"></div>
-        <div class="flex-info">
-            <p>
-                O Passo Certo é um projeto educativo. Não somos um site do governo e nunca pedimos sua senha
-                , seus documentos ou seus dados bancários.
-            </p>
-            <p>
-                Projeto Global Solution FIAP, 2026
-            </p>
+        <hr>
+        <div class="rodape__base">
+            <p class="rodape__aviso">O Passo Certo é um projeto educativo. Não somos um site do governo e nunca pedimos sua senha, seus documentos ou seus dados bancários.</p>
+            <p class="rodape__credito">Projeto Global Solution FIAP, 2026</p>
+        </div>
         </div>
     </footer>
 </body>
