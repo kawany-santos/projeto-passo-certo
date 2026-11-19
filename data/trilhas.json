@@ -1,0 +1,194 @@
+{
+  "trilhas": [
+    {
+      "id": "marcar-atendimento",
+      "titulo": "Marcar um atendimento",
+      "descricao": "Escolher o serviço, o dia e o horário e confirmar.",
+      "duracao": "3 lições · cerca de 10 minutos",
+      "icone": "📅",
+      "cor": "azul",
+      "licoes": [
+        {
+          "titulo": "Antes de começar",
+          "passos": [
+            {
+              "texto": "Confira se o celular está com internet. Pode ser o wi-fi de casa ou os dados do celular.",
+              "alt": "Celular com o símbolo do wi-fi aceso no alto da tela.",
+              "icone": "📶"
+            },
+            {
+              "texto": "Deixe seus documentos por perto, como RG e CPF. Para atendimento de saúde, separe também o cartão do SUS.",
+              "alt": "Mesa com documento de identidade, CPF e cartão do SUS.",
+              "icone": "🪪"
+            },
+            {
+              "texto": "Escolha um momento calmo. Se cansar, pode parar e voltar depois.",
+              "alt": "Pessoa idosa sentada à mesa com uma xícara de café e o celular.",
+              "icone": "☕"
+            }
+          ]
+        },
+        {
+          "titulo": "Escolher o serviço e o horário",
+          "passos": [
+            {
+              "texto": "Use só o site ou o aplicativo oficial. Endereços de órgãos públicos costumam terminar em gov.br.",
+              "alt": "Barra de endereço do navegador destacando o final gov.br.",
+              "icone": "🔒"
+            },
+            {
+              "texto": "Escolha o tipo de atendimento. Leia com calma cada opção antes de tocar.",
+              "alt": "Tela com três opções de atendimento em botões grandes.",
+              "icone": "📋"
+            },
+            {
+              "texto": "Escolha o dia e o horário. Horários em cinza já estão ocupados.",
+              "alt": "Calendário com alguns horários disponíveis e outros em cinza.",
+              "icone": "🗓️"
+            }
+          ]
+        },
+        {
+          "titulo": "Confirmar e conferir",
+          "passos": [
+            {
+              "texto": "Antes de confirmar, confira seu nome, o dia, o horário e o local.",
+              "alt": "Tela de resumo com os dados do agendamento.",
+              "icone": "🔎"
+            },
+            {
+              "texto": "Toque em Confirmar e espere a mensagem de que deu certo. Não toque duas vezes.",
+              "alt": "Dedo tocando o botão Confirmar.",
+              "icone": "☑️"
+            },
+            {
+              "texto": "Anote o código de confirmação ou tire um print da tela. Ele prova que você agendou.",
+              "alt": "Tela de confirmação com o código do agendamento em destaque.",
+              "icone": "🧾"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reconhecer-golpes",
+      "titulo": "Reconhecer golpes",
+      "descricao": "Saber quando uma mensagem é falsa antes de clicar.",
+      "duracao": "3 lições · cerca de 10 minutos",
+      "icone": "🛡️",
+      "cor": "lilas",
+      "licoes": [
+        {
+          "titulo": "Sinais de golpe",
+          "passos": [
+            {
+              "texto": "Desconfie de pressa. Mensagens como “sua conta será bloqueada hoje” querem que você aja sem pensar.",
+              "alt": "Mensagem no celular com a palavra URGENTE em letras grandes.",
+              "icone": "🚨"
+            },
+            {
+              "texto": "Nenhum órgão público pede senha, código ou foto de documento por mensagem.",
+              "alt": "Mensagem pedindo senha, com um X vermelho por cima.",
+              "icone": "🚫"
+            },
+            {
+              "texto": "Desconfie de links com nomes estranhos ou com erros de escrita.",
+              "alt": "Link com o endereço escrito de forma errada, destacado em vermelho.",
+              "icone": "🔗"
+            }
+          ]
+        },
+        {
+          "titulo": "O que fazer quando desconfiar",
+          "passos": [
+            {
+              "texto": "Não clique no link e não responda à mensagem.",
+              "alt": "Mão afastando o dedo de um link no celular.",
+              "icone": "✋"
+            },
+            {
+              "texto": "Confirme pelo site ou telefone oficial, ou pergunte a alguém de confiança.",
+              "alt": "Pessoa idosa mostrando o celular para a neta.",
+              "icone": "☎️"
+            },
+            {
+              "texto": "Bloqueie o número e apague a mensagem.",
+              "alt": "Tela com a opção Bloquear contato.",
+              "icone": "⛔"
+            }
+          ]
+        },
+        {
+          "titulo": "Se você já clicou ou passou dados",
+          "passos": [
+            {
+              "texto": "Troque sua senha o quanto antes.",
+              "alt": "Tela de troca de senha.",
+              "icone": "🔑"
+            },
+            {
+              "texto": "Se passou dados do banco, ligue para o número que está no verso do seu cartão.",
+              "alt": "Verso de um cartão de banco com o número de telefone em destaque.",
+              "icone": "💳"
+            },
+            {
+              "texto": "Registre um boletim de ocorrência. Em muitos estados, dá para fazer pela internet, na delegacia eletrônica.",
+              "alt": "Tela de registro de boletim de ocorrência.",
+              "icone": "📝"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guardar-comprovantes",
+      "titulo": "Guardar comprovantes",
+      "descricao": "Salvar a confirmação de um serviço e encontrar depois.",
+      "duracao": "2 lições · cerca de 5 minutos",
+      "icone": "🧾",
+      "cor": "verde",
+      "licoes": [
+        {
+          "titulo": "Tirar um print",
+          "passos": [
+            {
+              "texto": "Na maioria dos celulares Android, aperte ao mesmo tempo o botão de ligar e o de abaixar o volume.",
+              "alt": "Celular Android com os botões de ligar e de volume destacados.",
+              "icone": "📱"
+            },
+            {
+              "texto": "Na maioria dos iPhones, aperte ao mesmo tempo o botão lateral e o de aumentar o volume.",
+              "alt": "iPhone com o botão lateral e o de volume destacados.",
+              "icone": "📲"
+            },
+            {
+              "texto": "Envie o print para você mesmo ou para alguém de confiança. Assim ele fica guardado em dois lugares.",
+              "alt": "Conversa de mensagens com a imagem do comprovante enviada.",
+              "icone": "💬"
+            }
+          ]
+        },
+        {
+          "titulo": "Encontrar depois",
+          "passos": [
+            {
+              "texto": "Abra a galeria de fotos do celular.",
+              "alt": "Ícone do aplicativo de galeria de fotos.",
+              "icone": "🖼️"
+            },
+            {
+              "texto": "Procure a pasta Capturas de tela ou Screenshots.",
+              "alt": "Galeria aberta com a pasta Capturas de tela em destaque.",
+              "icone": "📂"
+            },
+            {
+              "texto": "Marque o print como favorito para achar mais rápido.",
+              "alt": "Foto do comprovante com o ícone de coração ou estrela marcado.",
+              "icone": "⭐"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
