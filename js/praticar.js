@@ -320,6 +320,7 @@
           ['Código do treino', codigoDoTreino()]
         ]);
 
+        progressoLocal.registrarAgendamento();
         mostrarTela('sucesso');
         anunciar('Treino concluído. O atendimento de treino foi marcado e nada foi enviado de verdade.');
       }, 700);
@@ -461,6 +462,7 @@
 
     quizSeguir.addEventListener('click', function () {
       if (indiceQuiz === MENSAGENS.length - 1) {
+        progressoLocal.registrarQuiz(acertos, MENSAGENS.length);
         quizFeedback.hidden = true;
         quizPlacar.textContent = acertos === MENSAGENS.length
           ? 'Você acertou as 3 mensagens!'

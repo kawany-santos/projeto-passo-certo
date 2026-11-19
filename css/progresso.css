@@ -1,0 +1,70 @@
+.progresso { background: var(--fundo-suave); padding-block: clamp(40px, 5vw, 72px) var(--secao); }
+.pc-secoes { display: grid; gap: clamp(40px, 5vw, 72px); }
+.progresso h1, .pc-resumo h2 { margin-block: 16px; }
+.pc-resumo { display: flex; align-items: center; gap: clamp(24px, 4vw, 64px); padding: clamp(24px, 4.5vw, 64px); background: var(--destaque); color: white; border-radius: 40px; box-shadow: var(--sombra); }
+.pc-resumo .etiqueta { background: #ffffff20; border-color: #ffffff60; color: white; }
+.pc-resumo .etiqueta::before { background: white; }
+.pc-resumo p { font-size: var(--fs-texto-g); }
+.pc-resumo .botao { margin-top: 28px; }
+.pc-anel { --parte: 0%; flex: none; width: clamp(150px, 17vw, 240px); aspect-ratio: 1; border-radius: 50%; padding: 20px; background: conic-gradient(white var(--parte), #ffffff38 0); }
+.pc-anel span { height: 100%; display: grid; align-content: center; justify-items: center; border-radius: 50%; background: var(--destaque); box-shadow: inset 0 0 0 14px #ffffff14; }
+.pc-anel strong, .pc-opcoes strong { font-size: var(--fs-h2); line-height: 1.2; }
+.pc-trilhas, .pc-treinos, .pc-detalhes { display: grid; gap: 32px; align-items: stretch; }
+.pc-trilhas { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 32px; }
+.pc-cartao { min-width: 0; padding: clamp(22px, 2.5vw, 36px); background: var(--fundo); border: 1px solid var(--borda); border-radius: var(--raio-g); box-shadow: var(--sombra); }
+.pc-trilha { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.pc-topo { width: 100%; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; }
+.pc-topo svg { width: 72px; height: 72px; }
+.pc-estado { border-radius: 999px; padding: 8px 16px; font-size: var(--fs-apoio); background: var(--fundo-suave); }
+.pc-trilha progress { width: 100%; height: 12px; border: 0; border-radius: 999px; overflow: hidden; background: var(--azul-100); color: var(--destaque); appearance: none; }
+.pc-trilha progress::-webkit-progress-bar { background: var(--azul-100); }
+.pc-trilha progress::-webkit-progress-value { background: var(--cor-barra, var(--destaque)); border-radius: inherit; }
+.pc-trilha progress::-moz-progress-bar { background: var(--cor-barra, var(--destaque)); }
+.pc-trilha.em-andamento { border: 2px solid var(--destaque); }
+.em-andamento .pc-estado { color: var(--destaque); background: var(--azul-100); }
+.pc-trilha.concluida { --cor-barra: var(--verde); }
+.concluida .pc-estado { color: var(--verde); background: var(--verde-50); }
+.pc-licoes, .pc-apagar p { font-size: var(--fs-apoio); color: var(--texto-2); }
+.pc-trilha .botao { margin-top: auto; }
+.pc-detalhes { grid-template-columns: 0.94fr 1.06fr; }
+.pc-treinos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 32px; }
+.pc-treinos h3 { font-size: var(--fs-rotulo); line-height: 1.3; font-weight: 600; }
+.pc-alvo { display: grid; width: 64px; height: 64px; }
+.pc-alvo img { grid-area: 1 / 1; }
+.pc-numero { color: var(--destaque); font-size: var(--fs-h3); font-weight: 700; margin-block: 12px; }
+.pc-numero strong { font-size: var(--fs-display); line-height: 1.06; }
+.pc-sentimento { padding: clamp(24px, 3vw, 40px); }
+.pc-sentimento > p { margin-top: 18px; }
+.pc-opcoes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 5rem), 1fr)); gap: 8px; margin-top: 28px; }
+.pc-opcoes label { display: grid; position: relative; cursor: pointer; }
+.pc-opcoes input { position: absolute; opacity: 0; }
+.pc-opcoes span { display: grid; align-content: start; gap: 6px; padding: 16px 6px; text-align: center; border: 1px solid var(--borda); border-radius: 18px; font-size: var(--fs-apoio); }
+.pc-opcoes input:checked + span { color: white; background: var(--destaque); }
+.pc-opcoes input:focus-visible + span { outline: 4px solid var(--foco); outline-offset: 2px; }
+.pc-feedback { color: var(--verde); min-height: 1.5em; }
+.pc-feedback.salvo { padding-left: 34px; background: url('../img/progresso/confirmacao.svg') no-repeat left center; }
+.pc-apagar { display: flex; align-items: center; justify-content: space-between; gap: 24px; border: 2px dashed var(--borda); padding: 28px 32px; border-radius: var(--raio-m); }
+.pc-apagar button { color: var(--vermelho); border-color: currentColor; flex-shrink: 0; }
+[data-contraste="alto"] .pc-trilha progress { outline: 1px solid var(--texto); }
+@media (max-width: 1000px) {
+  .pc-detalhes { grid-template-columns: 1fr; }
+  .pc-trilhas { grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); }
+}
+@media (max-width: 650px) {
+  .pc-resumo, .pc-apagar { flex-direction: column; align-items: flex-start; }
+  .pc-resumo > div:last-child, .pc-resumo .botao { width: 100%; }
+  .pc-opcoes { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(4px, 2vw, 8px); }
+  .pc-opcoes span {
+    min-width: 0;
+    gap: 5px;
+    padding: 12px clamp(2px, 1vw, 7px);
+    border-radius: 12px;
+    font-size: .75rem;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+  .pc-opcoes strong { font-size: 1.6875rem; }
+  .pc-anel { align-self: center; padding: 14px; }
+  .pc-trilhas { grid-template-columns: 1fr; }
+  .pc-treinos { grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr)); gap: 12px; }
+}
