@@ -11,7 +11,7 @@ Parte das pessoas idosas não aprendeu a usar com segurança os serviços públi
 ## Solução
 
 - **Trilhas de aprendizado:** lições curtas, com texto simples e leitura em voz alta.
-- **Simulador:** a pessoa pratica um agendamento num ambiente de treino, sem nenhum risco.
+- **Simulador:** a pessoa treina marcar um atendimento e treina reconhecer golpes num ambiente de treino, sem nenhum risco.
 - **Ajuda presencial:** a página indica unidades onde atendentes ajudam a usar serviços pela internet.
 
 ## Interações em JavaScript
@@ -23,6 +23,11 @@ Parte das pessoas idosas não aprendeu a usar com segurança os serviços públi
 | Leitura da página em voz alta, em português | Baixa visão, pouca familiaridade com leitura e cansaço visual |
 | Menu e painel de ajustes no celular, com foco preso e fechamento pela tecla Esc | Navegação clara por toque e por teclado |
 | Cabeçalho que se adapta quando a letra grande não cabe | Evita que o menu fique quebrado com a letra maior |
+| Abas Agendamento e É golpe ou não é?, com setas do teclado | Escolher o treino sem se perder na página |
+| Formulário de treino que confere os campos e diz o que falta, com uma mensagem por campo | Entender o erro no lugar onde ele aconteceu, sem adivinhar |
+| Resumo que se atualiza a cada escolha | Conferir o que já foi escolhido e o que ainda falta |
+| Revisão antes de confirmar e mensagem de sucesso ao final | Ver que o treino terminou bem, sabendo que nada foi enviado |
+| Quiz de golpes com explicação dos sinais depois de cada resposta | Aprender a reconhecer um golpe errando sem consequência |
 
 ## Acessibilidade
 
@@ -40,10 +45,13 @@ HTML, CSS e JavaScript puro. Publicado com GitHub Pages.
 ## Estrutura
 
 ```
-index.html      Página inicial
-css/style.css   Estilos, versões desktop e celular e modo alto contraste
-js/main.js      Ajustes de leitura, leitura em voz alta, menu e painel de ajustes
-img/            Fotos e ilustrações
+index.html          Página inicial
+praticar.html       Página dos simuladores de treino
+css/style.css       Estilos, versões desktop e celular e modo alto contraste
+css/praticar.css    Estilos dos simuladores (formulário, opções, resumo, quiz)
+js/main.js          Ajustes de leitura, leitura em voz alta, menu e painel de ajustes
+js/praticar.js      Abas, formulário com validação, resumo e quiz de golpes
+img/                Fotos e ilustrações
 ```
 
 ## Como rodar no computador

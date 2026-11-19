@@ -308,4 +308,10 @@
   carregarPreferencias();
   aplicarPreferencias();
   atualizarBotoesOuvir();
+
+  /* Outras páginas, como a Praticar, usam o mesmo aviso e a mesma leitura */
+  window.PassoCerto = {
+    anunciar: anunciar,
+    pararLeitura: pararLeitura
+  };
 })();
