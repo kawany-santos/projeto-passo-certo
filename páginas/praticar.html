@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Praticar | Passo Certo</title>
+  <meta name="description" content="Treine marcar um atendimento e reconhecer golpes. Nada é enviado de verdade: errar aqui não tem consequência.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/praticar.css">
+  <script src="/js/main.js" defer></script>
+  <script src="/js/praticar.js" defer></script>
+</head>
+<body>
+
+  <!-- Ícones usados no site. Cada um é chamado com <use href="#id">. -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="logo-azul" viewBox="0 0 52 52"><rect width="52" height="52" rx="16" fill="#1A47E5"/><path d="M11 41V34H19V27H27V20H35V13H41V41H11Z" fill="#fff"/><circle cx="17" cy="17" r="7" fill="#A8C0FF"/><path d="M13.8 17.2l2.4 2.4 4.2-4.8" stroke="#0B1F5C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+    <symbol id="logo-branco" viewBox="0 0 52 52"><rect width="52" height="52" rx="16" fill="#fff"/><path d="M11 41V34H19V27H27V20H35V13H41V41H11Z" fill="#1A47E5"/><circle cx="17" cy="17" r="7" fill="#A8C0FF"/><path d="M13.8 17.2l2.4 2.4 4.2-4.8" stroke="#0B1F5C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+
+    <symbol id="i-ok" viewBox="0 0 28 28"><circle cx="14" cy="14" r="13" fill="#13803B"/><path d="M8.5 14.5l3.6 3.6 7.4-8" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+    <symbol id="i-ok-claro" viewBox="0 0 28 28"><circle cx="14" cy="14" r="13" fill="#A8C0FF"/><path d="M8.5 14.5l3.6 3.6 7.4-8" stroke="#0B1F5C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+    <symbol id="i-erro" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#B42318"/><path d="M12 6.8v6.4" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><circle cx="12" cy="17.3" r="1.6" fill="#fff"/></symbol>
+    <symbol id="i-estrela" viewBox="0 0 22 22"><path d="M11 2l2.6 5.6 6 .7-4.5 4.1 1.2 6L11 15.4 5.7 18.4l1.2-6L2.4 8.3l6-.7L11 2z" fill="currentColor"/></symbol>
+    <symbol id="i-relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/><path d="M12 7.5V12l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></symbol>
+    <symbol id="i-som" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></symbol>
+    <symbol id="i-contraste" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/></symbol>
+    <symbol id="i-fechar" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/></symbol>
+    <symbol id="i-seta" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+    <symbol id="i-certo" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+    <symbol id="i-pessoa" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4.2" fill="currentColor"/><path d="M12 14c-4.4 0-8 3.1-8 7h16c0-3.9-3.6-7-8-7z" fill="currentColor"/></symbol>
+    <symbol id="i-escudo" viewBox="0 0 30 30"><path d="M15 3l10 4v7c0 6.5-4.3 11.5-10 13-5.7-1.5-10-6.5-10-13V7l10-4z" fill="#A8C0FF"/><path d="M10.5 15l3.2 3.2 6-6.4" stroke="#0B1F5C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+    <symbol id="i-ouvir-circulo" viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="#1A47E5"/><path d="M11 17v6h4l5 4V13l-5 4h-4z" fill="#fff"/><path d="M23.5 16.5a5 5 0 0 1 0 7M26 14a8.5 8.5 0 0 1 0 12" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/></symbol>
+
+    <!-- Ícones de vidro: forma sólida atrás, camada translúcida na frente, símbolo branco -->
+    <symbol id="g-letra" viewBox="0 0 96 96"><rect x="46" y="12" width="40" height="40" rx="12" fill="#1A47E5"/><rect x="10" y="24" width="60" height="58" rx="16" fill="#BCCDFF" fill-opacity=".62" stroke="#fff" stroke-width="1.5"/><path d="M24 68l12-30 12 30M28.5 58h15" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M66 24v16M58 32h16" stroke="#fff" stroke-width="5" stroke-linecap="round"/></symbol>
+    <symbol id="g-menos" viewBox="0 0 96 96"><rect x="46" y="12" width="40" height="40" rx="12" fill="#1A47E5"/><rect x="10" y="24" width="60" height="58" rx="16" fill="#BCCDFF" fill-opacity=".62" stroke="#fff" stroke-width="1.5"/><path d="M24 68l12-30 12 30M28.5 58h15" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M58 32h16" stroke="#fff" stroke-width="5" stroke-linecap="round"/></symbol>
+    <symbol id="g-contraste" viewBox="0 0 96 96"><circle cx="58" cy="48" r="28" fill="#1A47E5"/><circle cx="38" cy="48" r="28" fill="#BCCDFF" fill-opacity=".62" stroke="#fff" stroke-width="1.5"/></symbol>
+    <symbol id="g-som" viewBox="0 0 96 96"><circle cx="66" cy="38" r="20" fill="#1A47E5"/><rect x="10" y="22" width="60" height="54" rx="16" fill="#BCCDFF" fill-opacity=".62" stroke="#fff" stroke-width="1.5"/><path d="M24 42v14h9l11 9V33l-11 9h-9z" fill="#fff"/><path d="M51 41a10 10 0 0 1 0 16M56 35a18 18 0 0 1 0 28" stroke="#fff" stroke-width="4.5" stroke-linecap="round" fill="none"/></symbol>
+    <symbol id="g-calendario" viewBox="0 0 96 96"><rect x="42" y="12" width="44" height="44" rx="12" fill="#1A47E5"/><rect x="12" y="24" width="60" height="58" rx="16" fill="#BCCDFF" fill-opacity=".62" stroke="#fff" stroke-width="1.5"/><rect x="26" y="17" width="7" height="15" rx="3.5" fill="#1A47E5"/><rect x="51" y="17" width="7" height="15" rx="3.5" fill="#1A47E5"/><path d="M29 54l9 9 17-19" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+    <symbol id="g-escudo" viewBox="0 0 96 96"><circle cx="64" cy="32" r="22" fill="#1A47E5"/><path d="M42 14l27 10v21c0 18-11.5 30-27 36-15.5-6-27-18-27-36V24l27-10z" fill="#BCCDFF" fill-opacity=".62" stroke="#fff" stroke-width="1.5"/><path d="M30 48l9 9 16-18" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+    <symbol id="g-documento" viewBox="0 0 96 96"><rect x="44" y="10" width="40" height="54" rx="11" fill="#1A47E5"/><rect x="12" y="22" width="52" height="64" rx="14" fill="#BCCDFF" fill-opacity=".62" stroke="#fff" stroke-width="1.5"/><path d="M25 42h26M25 53h26M25 64h15" stroke="#fff" stroke-width="5.5" stroke-linecap="round"/></symbol>
+    <symbol id="g-aprender" viewBox="0 0 96 96"><circle cx="64" cy="30" r="20" fill="#1A47E5"/><rect x="12" y="24" width="62" height="58" rx="16" fill="#BCCDFF" fill-opacity=".62" stroke="#fff" stroke-width="1.5"/><path d="M26 42h34M26 53h34M26 64h20" stroke="#fff" stroke-width="5.5" stroke-linecap="round"/></symbol>
+    <symbol id="g-refazer" viewBox="0 0 96 96"><rect x="44" y="14" width="40" height="40" rx="12" fill="#1A47E5"/><circle cx="40" cy="54" r="30" fill="#BCCDFF" fill-opacity=".62" stroke="#fff" stroke-width="1.5"/><path d="M27 56a13 13 0 1 0 4-10" stroke="#fff" stroke-width="5.5" stroke-linecap="round" fill="none"/><path d="M26 38v9h9" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+    <symbol id="g-recomecar" viewBox="0 0 96 96"><circle cx="48" cy="48" r="46" fill="#DCE6FF"/><path d="M32 58a17 17 0 1 0 4.6-14.4" stroke="#1A47E5" stroke-width="6" stroke-linecap="round" fill="none"/><path d="M30 24v12h12" stroke="#1A47E5" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+    <symbol id="g-praticar" viewBox="0 0 96 96"><rect x="46" y="12" width="40" height="40" rx="20" fill="#1A47E5"/><rect x="10" y="28" width="60" height="54" rx="16" fill="#BCCDFF" fill-opacity=".62" stroke="#fff" stroke-width="1.5"/><path d="M28 55l9 9 17-19" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+    <symbol id="g-conversa" viewBox="0 0 96 96"><rect x="44" y="12" width="42" height="34" rx="12" fill="#1A47E5"/><path d="M14 34c0-7 5-12 12-12h34c7 0 12 5 12 12v22c0 7-5 12-12 12H36l-14 12V68c-5-2-8-6-8-12V34z" fill="#BCCDFF" fill-opacity=".62" stroke="#fff" stroke-width="1.5"/><circle cx="31" cy="45" r="4.5" fill="#fff"/><circle cx="43" cy="45" r="4.5" fill="#fff"/><circle cx="55" cy="45" r="4.5" fill="#fff"/></symbol>
+    <symbol id="g-agenda" viewBox="0 0 96 96"><rect x="42" y="12" width="44" height="44" rx="12" fill="#1A47E5"/><rect x="12" y="24" width="60" height="58" rx="16" fill="#BCCDFF" fill-opacity=".62" stroke="#fff" stroke-width="1.5"/><rect x="26" y="17" width="7" height="15" rx="3.5" fill="#1A47E5"/><rect x="51" y="17" width="7" height="15" rx="3.5" fill="#1A47E5"/><path d="M42 44v13l8 5" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+    <symbol id="g-gratis" viewBox="0 0 96 96"><circle cx="64" cy="32" r="22" fill="#1A47E5"/><rect x="12" y="30" width="62" height="52" rx="16" fill="#BCCDFF" fill-opacity=".62" stroke="#fff" stroke-width="1.5"/><path d="M30 56l9 9 17-19" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+    <symbol id="g-local" viewBox="0 0 96 96"><path d="M10 80l14-22h48l14 22z" fill="#1A47E5"/><path d="M48 10c-12 0-21 9-21 21 0 16 21 37 21 37s21-21 21-37c0-12-9-21-21-21z" fill="#BCCDFF" fill-opacity=".62" stroke="#fff" stroke-width="1.5"/><circle cx="48" cy="31" r="7" fill="#fff"/></symbol>
+  </svg>
+
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- header -->
+  <header class="cabecalho">
+    <div class="barra-acess">
+      <div class="container barra-acess__linha">
+        <p>Deixe a tela do seu jeito:</p>
+        <div class="controles" role="group" aria-label="Ajustes de leitura">
+          <button type="button" class="controle" data-acao="aumentar"><span class="controle__marca" aria-hidden="true">A+</span>Aumentar letra</button>
+          <button type="button" class="controle" data-acao="diminuir"><span class="controle__marca" aria-hidden="true">A-</span>Diminuir letra</button>
+          <button type="button" class="controle" data-acao="contraste" aria-pressed="false"><svg aria-hidden="true"><use href="#i-contraste"/></svg>Alto contraste</button>
+          <button type="button" class="controle" data-acao="ouvir" aria-pressed="false"><svg aria-hidden="true"><use href="#i-som"/></svg><span data-rotulo="Ouvir" data-rotulo-parar="Parar">Ouvir</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container nav-linha">
+      <a class="logo" href="/index.html">
+        <svg aria-hidden="true"><use href="#logo-azul"/></svg>
+        <span>Passo Certo</span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Principal">
+        <ul>
+          <li><a href="/index.html">Início</a></li>
+          <li><a href="trilhas.html">Aprender</a></li>
+          <li><a href="praticar.html" aria-current="page">Praticar</a></li>
+          <li><a href="progresso.html">Meu progresso</a></li>
+          <li><a href="ajuda.html">Ajuda perto de você</a></li>
+        </ul>
+      </nav>
+
+      <div class="acoes-mobile">
+        <button type="button" class="btn-aa" data-acao="abrir" aria-controls="painel-ajustes" aria-expanded="false" aria-label="Ajustes de leitura">Aa</button>
+        <button type="button" class="btn-menu" data-acao="abrir" aria-controls="menu-mobile" aria-expanded="false">
+          <svg aria-hidden="true"><use href="#i-menu"/></svg>Menu
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- header mobile opened -->
+  <div class="menu-mobile" id="menu-mobile" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+    <div class="menu-mobile__topo">
+      <a class="logo" href="/index.html">
+        <svg aria-hidden="true"><use href="#logo-azul"/></svg>
+        <span>Passo Certo</span>
+      </a>
+      <button type="button" class="botao-fechar" data-acao="fechar">
+        <svg aria-hidden="true"><use href="#i-fechar"/></svg>Fechar
+      </button>
+    </div>
+
+    <div class="menu-mobile__corpo">
+      <nav aria-label="Menu principal">
+        <ul class="menu-lista">
+          <li><a href="/index.html">Início<svg aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+          <li><a href="trilhas.htmll">Aprender<svg aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+          <li><a href="praticar.html" aria-current="page">Praticar<svg aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+          <li><a href="progresso.html">Meu progresso<svg aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+          <li><a href="ajuda.html">Ajuda perto de você<svg aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+        </ul>
+      </nav>
+
+      <hr>
+
+      <section class="menu-ajustes" aria-labelledby="menu-ajustes-titulo">
+        <h2 class="etiqueta" id="menu-ajustes-titulo">Ajustes de leitura</h2>
+        <div class="ajustes-grade">
+          <button type="button" class="bloco" data-acao="aumentar"><svg aria-hidden="true"><use href="#g-letra"/></svg>Aumentar letra</button>
+          <button type="button" class="bloco" data-acao="diminuir"><svg aria-hidden="true"><use href="#g-menos"/></svg>Diminuir letra</button>
+          <button type="button" class="bloco" data-acao="contraste" aria-pressed="false"><svg aria-hidden="true"><use href="#g-contraste"/></svg>Alto contraste</button>
+          <button type="button" class="bloco" data-acao="ouvir" aria-pressed="false"><svg aria-hidden="true"><use href="#g-som"/></svg><span data-rotulo="Ouvir a página" data-rotulo-parar="Parar a leitura">Ouvir a página</span></button>
+        </div>
+      </section>
+
+      <p class="aviso-seguro">
+        <svg aria-hidden="true"><use href="#i-escudo"/></svg>
+        Nunca pedimos sua senha, seus documentos ou seus dados bancários.
+      </p>
+    </div>
+  </div>
+
+  <!-- Painel de ajustes Aa -->
+  <div class="folha" id="painel-ajustes" role="dialog" aria-modal="true" aria-labelledby="folha-titulo" hidden>
+    <div class="folha__fundo" data-acao="fechar"></div>
+    <div class="folha__caixa">
+      <div class="folha__topo">
+        <h2 class="titulo-3" id="folha-titulo">Ajustes de leitura</h2>
+        <button type="button" class="botao-fechar" data-acao="fechar">
+          <svg aria-hidden="true"><use href="#i-fechar"/></svg>Fechar
+        </button>
+      </div>
+      <div class="ajustes-grade">
+        <button type="button" class="bloco" data-acao="aumentar"><svg aria-hidden="true"><use href="#g-letra"/></svg>Aumentar letra</button>
+        <button type="button" class="bloco" data-acao="diminuir"><svg aria-hidden="true"><use href="#g-menos"/></svg>Diminuir letra</button>
+        <button type="button" class="bloco" data-acao="contraste" aria-pressed="false"><svg aria-hidden="true"><use href="#g-contraste"/></svg>Alto contraste</button>
+        <button type="button" class="bloco" data-acao="ouvir" aria-pressed="false"><svg aria-hidden="true"><use href="#g-som"/></svg><span data-rotulo="Ouvir a página" data-rotulo-parar="Parar a leitura">Ouvir a página</span></button>
+      </div>
+      <p class="folha__nota">Suas escolhas ficam salvas neste aparelho.</p>
+    </div>
+  </div>
+
+  <main id="conteudo" tabindex="-1" class="praticar">
+
+    <div class="faixa-treino">
+      <div class="container faixa-treino__linha">
+        <svg class="faixa-treino__icone" aria-hidden="true"><use href="#i-escudo"/></svg>
+        <p>Ambiente de treino. Nada aqui é enviado de verdade e nenhum atendimento é marcado.</p>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <header class="topo">
+        <div class="topo__texto">
+          <p class="etiqueta">Simulador</p>
+          <h1 class="topo__titulo">Praticar sem medo de errar</h1>
+          <p class="topo__intro">Escolha o que treinar. Se errar, a gente explica o que fazer.</p>
+        </div>
+
+        <div class="abas" role="tablist" aria-label="O que treinar">
+          <button type="button" class="aba" id="aba-agendamento" role="tab" aria-selected="true" aria-controls="painel-agendamento">Agendamento</button>
+          <button type="button" class="aba" id="aba-golpe" role="tab" aria-selected="false" aria-controls="painel-golpe">É golpe ou não é?</button>
+        </div>
+      </header>
+
+      <!-- Blocos que só aparecem no celular -->
+      <section class="so-estreito licoes" aria-labelledby="licoes-titulo">
+        <h2 class="licoes__titulo" id="licoes-titulo">Suas lições</h2>
+        <p class="licoes__contagem">1 de 3 lições concluída</p>
+        <ol class="licoes__lista">
+          <li class="licoes__item" data-estado="feito">
+            <span class="licoes__bolinha"><svg aria-hidden="true"><use href="#i-certo"/></svg></span>
+            <span class="licoes__texto"><strong>Antes de começar</strong><span>Concluída</span></span>
+          </li>
+          <li class="licoes__item" data-estado="atual">
+            <span class="licoes__bolinha" aria-hidden="true">2</span>
+            <span class="licoes__texto"><strong>Escolher o serviço e o horário</strong><span>Você está aqui</span></span>
+          </li>
+          <li class="licoes__item">
+            <span class="licoes__bolinha" aria-hidden="true">3</span>
+            <span class="licoes__texto"><strong>Confirmar e conferir</strong><span>Próximo passo</span></span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="so-estreito calma">
+        <span class="calma__icone" aria-hidden="true"><svg><use href="#i-relogio"/></svg></span>
+        <h2 class="calma__titulo">Pode ir com calma</h2>
+        <p>Seu progresso fica salvo. Se cansar, pare e volte depois do ponto onde parou.</p>
+      </section>
+
+      <!-- Grade principal -->
+      <div class="treino">
+
+        <div class="treino__principal">
+
+          <!-- agendamento -->
+          <section id="painel-agendamento" role="tabpanel" aria-labelledby="aba-agendamento" class="cartao">
+            <h2 class="cartao__titulo">Marcar um atendimento de treino</h2>
+            <p class="cartao__sub">Unidade de Saúde Vila Esperança, uma unidade inventada para este exercício.</p>
+
+            <!-- Tela 1: formulário -->
+            <div class="tela" id="tela-formulario">
+
+              <div class="alerta" id="alerta-form" hidden>
+                <svg class="alerta__icone" aria-hidden="true"><use href="#i-erro"/></svg>
+                <div>
+                  <strong id="alerta-titulo">Faltam 2 informações</strong>
+                  <p id="alerta-texto">Veja as mensagens abaixo de cada campo.</p>
+                </div>
+              </div>
+
+              <form id="form-treino" novalidate>
+
+                <!-- 1. Dados -->
+                <div class="grupo">
+                  <div class="grupo__cabecalho">
+                    <span class="grupo__numero" aria-hidden="true">1</span>
+                    <h3 class="grupo__titulo">Seus dados</h3>
+                  </div>
+
+                  <div class="campos">
+                    <div class="campo" data-campo="nome">
+                      <label class="campo__rotulo" for="nome">Seu nome completo</label>
+                      <p class="campo__ajuda" id="nome-ajuda">Escreva como está no seu documento.</p>
+                      <span class="campo__caixa">
+                        <input class="campo__input" id="nome" name="nome" type="text" autocomplete="name" aria-describedby="nome-ajuda nome-msg">
+                        <span class="campo__estado" aria-hidden="true">
+                          <svg class="campo__icone-erro"><use href="#i-erro"/></svg>
+                          <svg class="campo__icone-ok"><use href="#i-ok"/></svg>
+                        </span>
+                      </span>
+                      <p class="campo__msg" id="nome-msg"></p>
+                    </div>
+
+                    <div class="campo" data-campo="cpf">
+                      <label class="campo__rotulo" for="cpf">CPF de treino</label>
+                      <p class="campo__ajuda" id="cpf-ajuda">Não use o seu CPF verdadeiro.</p>
+                      <span class="campo__caixa">
+                        <input class="campo__input" id="cpf" name="cpf" type="text" inputmode="numeric" autocomplete="off" placeholder="000.000.000-00" aria-describedby="cpf-ajuda cpf-msg">
+                        <span class="campo__estado" aria-hidden="true">
+                          <svg class="campo__icone-erro"><use href="#i-erro"/></svg>
+                          <svg class="campo__icone-ok"><use href="#i-ok"/></svg>
+                        </span>
+                      </span>
+                      <p class="campo__msg" id="cpf-msg"></p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 2. Atendimento -->
+                <div class="grupo">
+                  <div class="grupo__cabecalho">
+                    <span class="grupo__numero" aria-hidden="true">2</span>
+                    <h3 class="grupo__titulo">Atendimento</h3>
+                  </div>
+
+                  <p class="grupo__pergunta" id="atendimento-pergunta">Que atendimento você precisa?</p>
+                  <div class="atendimentos" role="radiogroup" aria-labelledby="atendimento-pergunta" data-grupo="atendimento">
+                    <label class="atendimento-opcao">
+                      <input class="opcao__input" type="radio" name="atendimento" value="consulta" data-rotulo="Consulta com clínico geral">
+                      <span class="atendimento-opcao__corpo">
+                        <span class="opcao__marca" aria-hidden="true"></span>
+                        <span>Consulta com clínico geral</span>
+                      </span>
+                    </label>
+                    <label class="atendimento-opcao">
+                      <input class="opcao__input" type="radio" name="atendimento" value="vacinacao" data-rotulo="Vacinação">
+                      <span class="atendimento-opcao__corpo">
+                        <span class="opcao__marca" aria-hidden="true"></span>
+                        <span>Vacinação</span>
+                      </span>
+                    </label>
+                    <label class="atendimento-opcao">
+                      <input class="opcao__input" type="radio" name="atendimento" value="remedio" data-rotulo="Retirada de remédio">
+                      <span class="atendimento-opcao__corpo">
+                        <span class="opcao__marca" aria-hidden="true"></span>
+                        <span>Retirada de remédio</span>
+                      </span>
+                    </label>
+                  </div>
+                  <p class="grupo__msg" id="atendimento-msg"></p>
+                </div>
+
+                <!-- 3. Dia e horário -->
+                <div class="grupo">
+                  <div class="grupo__cabecalho">
+                    <span class="grupo__numero" aria-hidden="true">3</span>
+                    <h3 class="grupo__titulo">Dia e horário</h3>
+                  </div>
+
+                  <p class="grupo__pergunta" id="dia-pergunta">Escolha o dia</p>
+                  <div class="chips" role="radiogroup" aria-labelledby="dia-pergunta" data-grupo="dia" data-erro="false">
+                    <label class="chip">
+                      <input class="opcao__input" type="radio" name="dia" value="seg" data-rotulo="Segunda-feira">
+                      <span class="chip__corpo"><span class="chip__texto">Seg</span></span>
+                    </label>
+                    <label class="chip">
+                      <input class="opcao__input" type="radio" name="dia" value="ter" data-rotulo="Terça-feira">
+                      <span class="chip__corpo"><span class="chip__texto">Ter</span></span>
+                    </label>
+                    <label class="chip">
+                      <input class="opcao__input" type="radio" name="dia" value="qua" data-rotulo="Quarta-feira">
+                      <span class="chip__corpo"><span class="chip__texto">Qua</span></span>
+                    </label>
+                    <label class="chip">
+                      <input class="opcao__input" type="radio" name="dia" value="qui" data-rotulo="Quinta-feira">
+                      <span class="chip__corpo"><span class="chip__texto">Qui</span></span>
+                    </label>
+                    <label class="chip">
+                      <input class="opcao__input" type="radio" name="dia" value="sex" data-rotulo="Sexta-feira">
+                      <span class="chip__corpo"><span class="chip__texto">Sex</span></span>
+                    </label>
+                  </div>
+                  <p class="grupo__msg" id="dia-msg"></p>
+
+                  <p class="grupo__pergunta" id="horario-pergunta">Escolha o horário</p>
+                  <div class="chips chips--horas" role="radiogroup" aria-labelledby="horario-pergunta" data-grupo="horario" data-erro="false">
+                    <label class="chip">
+                      <input class="opcao__input" type="radio" name="horario" value="8" data-rotulo="8 horas">
+                      <span class="chip__corpo"><span class="chip__texto">8h</span></span>
+                    </label>
+                    <label class="chip chip--ocupado">
+                      <input class="opcao__input" type="radio" name="horario" value="9" disabled data-rotulo="9 horas">
+                      <span class="chip__corpo"><span class="chip__texto">9h</span><span class="chip__nota">ocupado</span></span>
+                    </label>
+                    <label class="chip">
+                      <input class="opcao__input" type="radio" name="horario" value="10" data-rotulo="10 horas">
+                      <span class="chip__corpo"><span class="chip__texto">10h</span></span>
+                    </label>
+                    <label class="chip">
+                      <input class="opcao__input" type="radio" name="horario" value="14" data-rotulo="14 horas">
+                      <span class="chip__corpo"><span class="chip__texto">14h</span></span>
+                    </label>
+                    <label class="chip chip--ocupado">
+                      <input class="opcao__input" type="radio" name="horario" value="15" disabled data-rotulo="15 horas">
+                      <span class="chip__corpo"><span class="chip__texto">15h</span><span class="chip__nota">ocupado</span></span>
+                    </label>
+                    <label class="chip">
+                      <input class="opcao__input" type="radio" name="horario" value="16" data-rotulo="16 horas">
+                      <span class="chip__corpo"><span class="chip__texto">16h</span></span>
+                    </label>
+                  </div>
+
+                  <p class="grupo__msg grupo__msg--com-icone" id="horario-msg"></p>
+                </div>
+
+                <div class="acoes-form">
+                  <button type="submit" class="botao botao--primario" id="btn-revisar">Revisar meus dados</button>
+                  <p class="acoes-form__nota">Nada é enviado. É só um treino.</p>
+                </div>
+              </form>
+            </div>
+
+            <!-- Tela 2: revisão -->
+            <div class="tela" id="tela-revisao" hidden>
+              <h3 class="tela__titulo">Confira seus dados</h3>
+              <p class="tela__sub">Se estiver tudo certo, confirme. Se algo estiver errado, volte e corrija.</p>
+
+              <dl class="lista-dados" id="revisao-dados"></dl>
+
+              <div class="acoes-form">
+                <button type="button" class="botao botao--secundario" id="btn-corrigir">Voltar e corrigir</button>
+                <button type="button" class="botao botao--primario" id="btn-confirmar">Confirmar treino</button>
+              </div>
+              <p class="acoes-form__nota acoes-form__nota--centro">Nada é enviado. É só um treino.</p>
+            </div>
+
+            <!-- Tela 3: sucesso -->
+            <div class="tela tela--sucesso" id="tela-sucesso" hidden>
+              <svg class="sucesso__icone" aria-hidden="true"><use href="#i-ok"/></svg>
+              <h3 class="tela__titulo tela__titulo--centro">Atendimento de treino marcado!</h3>
+              <p class="tela__sub tela__sub--centro">Parabéns, você completou o treino. Nenhum dado foi enviado e nenhum atendimento foi marcado de verdade.</p>
+
+              <dl class="lista-dados" id="sucesso-dados"></dl>
+
+              <div class="acoes-form acoes-form--centro">
+                <button type="button" class="botao botao--primario" id="btn-recomecar">Fazer outro treino</button>
+                <a class="botao botao--secundario" href="aprender.html?trilha=comprovantes">Guardar comprovantes</a>
+              </div>
+            </div>
+          </section>
+
+          <!-- Aba, é golpe ou não é? -->
+          <section id="painel-golpe" role="tabpanel" aria-labelledby="aba-golpe" class="cartao" hidden>
+            <h2 class="cartao__titulo">É golpe ou não é?</h2>
+            <p class="cartao__sub">Leia a mensagem com calma e escolha uma resposta. Depois a gente mostra os sinais que ajudam a decidir.</p>
+
+            <div class="quiz" id="quiz">
+              <div class="quiz__topo">
+                <p class="quiz__contador">Mensagem <span id="quiz-numero">1</span> de 3</p>
+                <div class="quiz__barras" aria-hidden="true">
+                  <i class="quiz__barra"></i><i class="quiz__barra"></i><i class="quiz__barra"></i>
+                </div>
+              </div>
+
+              <article class="mensagem">
+                <header class="mensagem__topo">
+                  <span class="mensagem__avatar" aria-hidden="true"><svg><use href="#i-pessoa"/></svg></span>
+                  <span class="mensagem__quem">
+                    <strong id="quiz-de">Banco Segur@</strong>
+                    <span id="quiz-remetente">(11) 9 8888-7766</span>
+                  </span>
+                </header>
+                <p class="mensagem__texto" id="quiz-texto">Carregando…</p>
+              </article>
+
+              <div class="quiz__respostas" id="quiz-respostas">
+                <button type="button" class="botao botao--perigo" data-resposta="golpe">É golpe</button>
+                <button type="button" class="botao botao--secundario" data-resposta="verdade">É de verdade</button>
+              </div>
+
+              <div class="feedback" id="quiz-feedback" hidden>
+                <p class="feedback__titulo" id="quiz-feedback-titulo"></p>
+                <p class="feedback__texto" id="quiz-feedback-texto"></p>
+                <p class="feedback__subtitulo">Sinais que ajudam a ver</p>
+                <ul class="feedback__sinais" id="quiz-sinais"></ul>
+                <button type="button" class="botao botao--primario" id="quiz-seguir">Próxima mensagem</button>
+              </div>
+
+              <div class="resultado" id="quiz-resultado" hidden>
+                <svg class="resultado__icone" aria-hidden="true"><use href="#i-ok"/></svg>
+                <p class="resultado__titulo" id="quiz-placar"></p>
+                <p class="resultado__texto" id="quiz-final"></p>
+                <div class="acoes-form acoes-form--centro">
+                  <button type="button" class="botao botao--primario" id="quiz-reiniciar">Treinar de novo</button>
+                  <a class="botao botao--secundario" href="aprender.html?trilha=golpes">Ver as lições sobre golpes</a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Coluna lateral -->
+        <aside class="treino__lado">
+          <section class="lado-cartao" aria-labelledby="lado-erro-titulo">
+            <img src="/img/Ícone · refazer.svg" alt=""><use href="#g-recomecar"/>
+            <h2 class="lado-cartao__titulo" id="lado-erro-titulo">Aqui, errar não tem problema</h2>
+            <p class="lado-cartao__texto">Se algo estiver faltando, a mensagem aparece logo abaixo do campo, explicando o que fazer.</p>
+          </section>
+
+          <section class="lado-cartao resumo" data-aba="agendamento" aria-labelledby="resumo-titulo">
+            <h2 class="lado-cartao__titulo" id="resumo-titulo">Seu resumo</h2>
+            <dl class="resumo__lista">
+              <div class="resumo__linha">
+                <dt>Atendimento</dt>
+                <dd id="resumo-atendimento" data-vazio="true">Falta escolher</dd>
+              </div>
+              <div class="resumo__linha">
+                <dt>Dia</dt>
+                <dd id="resumo-dia" data-vazio="true">Falta escolher</dd>
+              </div>
+              <div class="resumo__linha">
+                <dt>Horário</dt>
+                <dd id="resumo-horario" data-vazio="true">Falta escolher</dd>
+              </div>
+              <div class="resumo__linha">
+                <dt>Local</dt>
+                <dd>Unidade de Saúde Vila Esperança</dd>
+              </div>
+            </dl>
+          </section>
+
+          <section class="lado-cartao" data-aba="golpe" aria-labelledby="sinais-titulo" hidden>
+            <h2 class="lado-cartao__titulo" id="sinais-titulo">Fique de olho</h2>
+            <ul class="sinais">
+              <li><svg class="sinais__icone" aria-hidden="true"><use href="#i-erro"/></svg>Pede senha ou código? É golpe.</li>
+              <li><svg class="sinais__icone" aria-hidden="true"><use href="#i-erro"/></svg>Pede pressa, com “urgente”? Desconfie.</li>
+              <li><svg class="sinais__icone" aria-hidden="true"><use href="#i-erro"/></svg>Link ou número que você não conhece? Não clique.</li>
+            </ul>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- footer -->
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape__topo">
+        <a class="logo" href="/index.html">
+          <svg aria-hidden="true"><use href="#logo-branco"/></svg>
+          <span>Passo Certo</span>
+        </a>
+        <nav aria-label="Rodapé">
+          <ul>
+            <li><a href="/index.html">Início</a></li>
+            <li><a href="trilhas.html">Aprender</a></li>
+            <li><a href="praticar.html">Praticar</a></li>
+            <li><a href="progresso.html">Meu progresso</a></li>
+            <li><a href="ajuda.html">Ajuda perto de você</a></li>
+          </ul>
+        </nav>
+      </div>
+      <hr>
+      <div class="rodape__base">
+        <p class="rodape__aviso">O Passo Certo é um projeto educativo. Não somos um site do governo e nunca pedimos sua senha, seus documentos ou seus dados bancários.</p>
+        <p class="rodape__credito">Projeto Global Solution FIAP, 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mensagens lidas pelo leitor de tela depois de cada ajuste -->
+  <div class="sr-only" id="aviso" aria-live="polite"></div>
+</body>
+</html>

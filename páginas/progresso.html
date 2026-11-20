@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meu progresso | Passo Certo</title>
+  <meta name="description" content="Acompanhe suas trilhas, os treinos e como você se sente ao usar serviços públicos pelo celular.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/progresso.css">
+  <script src="/js/dados-progresso.js" defer></script>
+  <script src="/js/progresso.js" defer></script>
+  <script src="/js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- Ícones usados no site. Cada um é chamado com <use href="#id">. -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="logo-azul" viewBox="0 0 52 52"><rect width="52" height="52" rx="16" fill="#1A47E5"/><path d="M11 41V34H19V27H27V20H35V13H41V41H11Z" fill="#fff"/><circle cx="17" cy="17" r="7" fill="#A8C0FF"/><path d="M13.8 17.2l2.4 2.4 4.2-4.8" stroke="#0B1F5C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+    <symbol id="logo-branco" viewBox="0 0 52 52"><rect width="52" height="52" rx="16" fill="#fff"/><path d="M11 41V34H19V27H27V20H35V13H41V41H11Z" fill="#1A47E5"/><circle cx="17" cy="17" r="7" fill="#A8C0FF"/><path d="M13.8 17.2l2.4 2.4 4.2-4.8" stroke="#0B1F5C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+
+    <symbol id="i-som" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></symbol>
+    <symbol id="i-contraste" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/></symbol>
+    <symbol id="i-fechar" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/></symbol>
+    <symbol id="i-seta" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+    <symbol id="i-escudo" viewBox="0 0 30 30"><path d="M15 3l10 4v7c0 6.5-4.3 11.5-10 13-5.7-1.5-10-6.5-10-13V7l10-4z" fill="#A8C0FF"/><path d="M10.5 15l3.2 3.2 6-6.4" stroke="#0B1F5C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+
+    <!-- Ícones de vidro: forma sólida atrás, camada translúcida na frente, símbolo branco -->
+    <symbol id="g-letra" viewBox="0 0 96 96"><rect x="46" y="12" width="40" height="40" rx="12" fill="#1A47E5"/><rect x="10" y="24" width="60" height="58" rx="16" fill="#BCCDFF" fill-opacity=".62" stroke="#fff" stroke-width="1.5"/><path d="M24 68l12-30 12 30M28.5 58h15" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M66 24v16M58 32h16" stroke="#fff" stroke-width="5" stroke-linecap="round"/></symbol>
+    <symbol id="g-menos" viewBox="0 0 96 96"><rect x="46" y="12" width="40" height="40" rx="12" fill="#1A47E5"/><rect x="10" y="24" width="60" height="58" rx="16" fill="#BCCDFF" fill-opacity=".62" stroke="#fff" stroke-width="1.5"/><path d="M24 68l12-30 12 30M28.5 58h15" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M58 32h16" stroke="#fff" stroke-width="5" stroke-linecap="round"/></symbol>
+    <symbol id="g-contraste" viewBox="0 0 96 96"><circle cx="58" cy="48" r="28" fill="#1A47E5"/><circle cx="38" cy="48" r="28" fill="#BCCDFF" fill-opacity=".62" stroke="#fff" stroke-width="1.5"/></symbol>
+    <symbol id="g-som" viewBox="0 0 96 96"><circle cx="66" cy="38" r="20" fill="#1A47E5"/><rect x="10" y="22" width="60" height="54" rx="16" fill="#BCCDFF" fill-opacity=".62" stroke="#fff" stroke-width="1.5"/><path d="M24 42v14h9l11 9V33l-11 9h-9z" fill="#fff"/><path d="M51 41a10 10 0 0 1 0 16M56 35a18 18 0 0 1 0 28" stroke="#fff" stroke-width="4.5" stroke-linecap="round" fill="none"/></symbol>
+    <symbol id="g-calendario" viewBox="0 0 96 96"><rect x="42" y="12" width="44" height="44" rx="12" fill="#1A47E5"/><rect x="12" y="24" width="60" height="58" rx="16" fill="#BCCDFF" fill-opacity=".62" stroke="#fff" stroke-width="1.5"/><rect x="26" y="17" width="7" height="15" rx="3.5" fill="#1A47E5"/><rect x="51" y="17" width="7" height="15" rx="3.5" fill="#1A47E5"/><path d="M29 54l9 9 17-19" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+    <symbol id="g-escudo" viewBox="0 0 96 96"><circle cx="64" cy="32" r="22" fill="#1A47E5"/><path d="M42 14l27 10v21c0 18-11.5 30-27 36-15.5-6-27-18-27-36V24l27-10z" fill="#BCCDFF" fill-opacity=".62" stroke="#fff" stroke-width="1.5"/><path d="M30 48l9 9 16-18" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+    <symbol id="g-documento" viewBox="0 0 96 96"><rect x="44" y="10" width="40" height="54" rx="11" fill="#1A47E5"/><rect x="12" y="22" width="52" height="64" rx="14" fill="#BCCDFF" fill-opacity=".62" stroke="#fff" stroke-width="1.5"/><path d="M25 42h26M25 53h26M25 64h15" stroke="#fff" stroke-width="5.5" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- header -->
+  <header class="cabecalho">
+    <div class="barra-acess">
+      <div class="container barra-acess__linha">
+        <p>Deixe a tela do seu jeito:</p>
+        <div class="controles" role="group" aria-label="Ajustes de leitura">
+          <button type="button" class="controle" data-acao="aumentar"><span class="controle__marca" aria-hidden="true">A+</span>Aumentar letra</button>
+          <button type="button" class="controle" data-acao="diminuir"><span class="controle__marca" aria-hidden="true">A-</span>Diminuir letra</button>
+          <button type="button" class="controle" data-acao="contraste" aria-pressed="false"><svg aria-hidden="true"><use href="#i-contraste"/></svg>Alto contraste</button>
+          <button type="button" class="controle" data-acao="ouvir" aria-pressed="false"><svg aria-hidden="true"><use href="#i-som"/></svg><span data-rotulo="Ouvir" data-rotulo-parar="Parar">Ouvir</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container nav-linha">
+      <a class="logo" href="/index.html">
+        <svg aria-hidden="true"><use href="#logo-azul"/></svg>
+        <span>Passo Certo</span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Principal">
+        <ul>
+          <li><a href="/index.html">Início</a></li>
+          <li><a href="trilhas.html">Aprender</a></li>
+          <li><a href="praticar.html">Praticar</a></li>
+          <li><a href="progresso.html" aria-current="page">Meu progresso</a></li>
+          <li><a href="ajuda.html">Ajuda perto de você</a></li>
+        </ul>
+      </nav>
+
+      <div class="acoes-mobile">
+        <button type="button" class="btn-aa" data-acao="abrir" aria-controls="painel-ajustes" aria-expanded="false" aria-label="Ajustes de leitura">Aa</button>
+        <button type="button" class="btn-menu" data-acao="abrir" aria-controls="menu-mobile" aria-expanded="false">
+          <svg aria-hidden="true"><use href="#i-menu"/></svg>Menu
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- header mobile opened -->
+  <div class="menu-mobile" id="menu-mobile" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+    <div class="menu-mobile__topo">
+      <a class="logo" href="/index.html">
+        <svg aria-hidden="true"><use href="#logo-azul"/></svg>
+        <span>Passo Certo</span>
+      </a>
+      <button type="button" class="botao-fechar" data-acao="fechar">
+        <svg aria-hidden="true"><use href="#i-fechar"/></svg>Fechar
+      </button>
+    </div>
+
+    <div class="menu-mobile__corpo">
+      <nav aria-label="Menu principal">
+        <ul class="menu-lista">
+          <li><a href="/index.html">Início<svg aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+          <li><a href="trilhas.html">Aprender<svg aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+          <li><a href="praticar.html">Praticar<svg aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+          <li><a href="progresso.html" aria-current="page">Meu progresso<svg aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+          <li><a href="ajuda.html">Ajuda perto de você<svg aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+        </ul>
+      </nav>
+
+      <hr>
+
+      <section class="menu-ajustes" aria-labelledby="menu-ajustes-titulo">
+        <h2 class="etiqueta" id="menu-ajustes-titulo">Ajustes de leitura</h2>
+        <div class="ajustes-grade">
+          <button type="button" class="bloco" data-acao="aumentar"><svg aria-hidden="true"><use href="#g-letra"/></svg>Aumentar letra</button>
+          <button type="button" class="bloco" data-acao="diminuir"><svg aria-hidden="true"><use href="#g-menos"/></svg>Diminuir letra</button>
+          <button type="button" class="bloco" data-acao="contraste" aria-pressed="false"><svg aria-hidden="true"><use href="#g-contraste"/></svg>Alto contraste</button>
+          <button type="button" class="bloco" data-acao="ouvir" aria-pressed="false"><svg aria-hidden="true"><use href="#g-som"/></svg><span data-rotulo="Ouvir a página" data-rotulo-parar="Parar a leitura">Ouvir a página</span></button>
+        </div>
+      </section>
+
+      <p class="aviso-seguro">
+        <svg aria-hidden="true"><use href="#i-escudo"/></svg>
+        Nunca pedimos sua senha, seus documentos ou seus dados bancários.
+      </p>
+    </div>
+  </div>
+
+  <!-- Painel ajustes aA -->
+  <div class="folha" id="painel-ajustes" role="dialog" aria-modal="true" aria-labelledby="folha-titulo" hidden>
+    <div class="folha__fundo" data-acao="fechar"></div>
+    <div class="folha__caixa">
+      <div class="folha__topo">
+        <h2 class="titulo-3" id="folha-titulo">Ajustes de leitura</h2>
+        <button type="button" class="botao-fechar" data-acao="fechar">
+          <svg aria-hidden="true"><use href="#i-fechar"/></svg>Fechar
+        </button>
+      </div>
+      <div class="ajustes-grade">
+        <button type="button" class="bloco" data-acao="aumentar"><svg aria-hidden="true"><use href="#g-letra"/></svg>Aumentar letra</button>
+        <button type="button" class="bloco" data-acao="diminuir"><svg aria-hidden="true"><use href="#g-menos"/></svg>Diminuir letra</button>
+        <button type="button" class="bloco" data-acao="contraste" aria-pressed="false"><svg aria-hidden="true"><use href="#g-contraste"/></svg>Alto contraste</button>
+        <button type="button" class="bloco" data-acao="ouvir" aria-pressed="false"><svg aria-hidden="true"><use href="#g-som"/></svg><span data-rotulo="Ouvir a página" data-rotulo-parar="Parar a leitura">Ouvir a página</span></button>
+      </div>
+      <p class="folha__nota">Suas escolhas ficam salvas neste aparelho.</p>
+    </div>
+  </div>
+
+  
+  <main id="conteudo" tabindex="-1" class="progresso">
+    <div class="container pc-secoes">
+      <header>
+        <span class="etiqueta">Seu caminho</span>
+        <h1 class="titulo-1">Meu progresso</h1>
+        <p class="texto-grande">Aqui você vê o que já aprendeu e o que falta. Seu progresso fica salvo só neste aparelho.</p>
+      </header>
+      <section class="pc-resumo" aria-labelledby="pc-total">
+        <div class="pc-anel" aria-hidden="true"><span><strong id="pc-contagem">0 de 3</strong>trilhas</span></div>
+        <div>
+          <span class="etiqueta" id="pc-incentivo">Primeiro passo</span>
+          <h2 class="titulo-1" id="pc-total">Você concluiu 0 de 3 trilhas</h2>
+          <p id="pc-proxima">Escolha uma trilha para começar no seu ritmo.</p>
+          <a class="botao botao--secundario" id="pc-continuar" href="#minhas-trilhas">Escolher uma trilha</a>
+        </div>
+      </section>
+      <section id="minhas-trilhas">
+        <h2 class="titulo-2">Minhas trilhas</h2>
+        <div class="pc-trilhas">
+          <article class="pc-cartao pc-trilha" data-trilha="agendamento">
+            <div class="pc-topo">
+              <svg aria-hidden="true"><use href="#g-calendario"/></svg>
+              <span class="pc-estado">Não começou</span>
+            </div>
+            <h3 class="titulo-3">Marcar um atendimento</h3>
+            <progress value="0" max="3" aria-label="Lições concluídas em Marcar um atendimento"></progress>
+            <p class="pc-licoes">0 de 3 lições</p>
+            <a class="botao botao--secundario" href="trilhas.html">Ver trilha<span class="sr-only"> Marcar um atendimento</span></a>
+          </article>
+          <article class="pc-cartao pc-trilha" data-trilha="golpes">
+            <div class="pc-topo">
+              <svg aria-hidden="true"><use href="#g-escudo"/></svg>
+              <span class="pc-estado">Não começou</span>
+            </div>
+            <h3 class="titulo-3">Reconhecer golpes</h3>
+            <progress value="0" max="3" aria-label="Lições concluídas em Reconhecer golpes"></progress>
+            <p class="pc-licoes">0 de 3 lições</p>
+            <a class="botao botao--secundario" href="trilhas.html">Ver trilha<span class="sr-only"> Reconhecer golpes</span></a>
+          </article>
+          <article class="pc-cartao pc-trilha" data-trilha="comprovantes">
+            <div class="pc-topo">
+              <svg aria-hidden="true"><use href="#g-documento"/></svg>
+              <span class="pc-estado">Não começou</span>
+            </div>
+            <h3 class="titulo-3">Guardar comprovantes</h3>
+            <progress value="0" max="2" aria-label="Lições concluídas em Guardar comprovantes"></progress>
+            <p class="pc-licoes">0 de 2 lições</p>
+            <a class="botao botao--secundario" href="trilhas.html">Ver trilha<span class="sr-only"> Guardar comprovantes</span></a>
+          </article>
+        </div>
+      </section>
+      <div class="pc-detalhes">
+        <section>
+          <h2 class="titulo-2">Meus treinos</h2>
+          <div class="pc-treinos">
+            <article class="pc-cartao">
+              <img src="/img/Ícone · refazer.svg" alt="" width="64" height="64">
+              <p class="pc-numero"><strong id="pc-agendas">0</strong> <span id="pc-vezes">vezes</span></p>
+              <h3>Agendamento no simulador</h3>
+            </article>
+            <article class="pc-cartao">
+              <span class="pc-alvo" aria-hidden="true">
+                <img src="/img/alvo-fundo.svg" alt="">
+                <img src="/img/alvo-frente.svg" alt="">
+                <img src="/img/Ícone · alvo.svg" alt="">
+              </span>
+              <p class="pc-numero"><strong id="pc-acertos">0</strong> de <span id="pc-perguntas">3</span></p>
+              <h3>Melhor resultado no teste de golpes</h3>
+            </article>
+          </div>
+        </section>
+        <section class="pc-cartao pc-sentimento">
+          <h2 class="titulo-2">Como você se sente?</h2>
+          <p id="pc-pergunta">Hoje, como você se sente para usar um serviço público sozinho pelo celular?</p>
+          <div class="pc-opcoes" role="radiogroup" aria-labelledby="pc-pergunta">
+            <label><input type="radio" name="seguranca" value="1"><span><strong>1</strong>Nada seguro</span></label>
+            <label><input type="radio" name="seguranca" value="2"><span><strong>2</strong>Pouco seguro</span></label>
+            <label><input type="radio" name="seguranca" value="3"><span><strong>3</strong>Mais ou menos</span></label>
+            <label><input type="radio" name="seguranca" value="4"><span><strong>4</strong>Seguro</span></label>
+            <label><input type="radio" name="seguranca" value="5"><span><strong>5</strong>Muito seguro</span></label>
+          </div>
+          <p class="pc-feedback" role="status"></p>
+        </section>
+      </div>
+      <div class="pc-apagar">
+        <p>Quer começar do zero? Isso apaga tudo o que foi salvo neste aparelho sobre o seu progresso.</p>
+        <button class="botao botao--secundario" id="pc-apagar" type="button">Apagar meu progresso</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- footer -->
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape__topo">
+        <a class="logo" href="/index.html">
+          <svg aria-hidden="true"><use href="#logo-branco"/></svg>
+          <span>Passo Certo</span>
+        </a>
+        <nav aria-label="Rodapé">
+          <ul>
+            <li><a href="/index.html">Início</a></li>
+            <li><a href="trilhas.html">Aprender</a></li>
+            <li><a href="praticar.html">Praticar</a></li>
+            <li><a href="progresso.html" aria-current="page">Meu progresso</a></li>
+            <li><a href="ajuda.html">Ajuda perto de você</a></li>
+          </ul>
+        </nav>
+      </div>
+      <hr>
+      <div class="rodape__base">
+        <p class="rodape__aviso">O Passo Certo é um projeto educativo. Não somos um site do governo e nunca pedimos sua senha, seus documentos ou seus dados bancários.</p>
+        <p class="rodape__credito">Projeto Global Solution FIAP, 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mensagens lidas pelo leitor de tela depois de cada ajuste -->
+  <div class="sr-only" id="aviso" aria-live="polite"></div>
+</body>
+</html>

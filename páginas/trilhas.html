@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aprenda passo a passo a usar serviços públicos pelo celular com o Passo Certo.">
+  <title>Aprender | Passo Certo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap">
+  <link rel="stylesheet" href="/css/trilhas.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/data/trilha-dados.js" defer></script>
+  <script src="/js/trilhas.js" defer></script>
+  <script src="/js/main.js" defer></script>
+
+</head>
+<body>
+    <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+    <header class="cabecalho">
+        <div class="barra-acess">
+        <div class="container barra-acess__linha">
+            <p>Deixe a tela do seu jeito:</p>
+            <div class="controles" role="group" aria-label="Ajustes de leitura">
+            <button type="button" class="controle" data-acao="aumentar"><span class="controle__marca" aria-hidden="true">A+</span>Aumentar letra</button>
+            <button type="button" class="controle" data-acao="diminuir"><span class="controle__marca" aria-hidden="true">A-</span>Diminuir letra</button>
+            <button type="button" class="controle" data-acao="contraste" aria-pressed="false"><svg aria-hidden="true"><use href="#i-contraste"/></svg>Alto contraste</button>
+            <button type="button" class="controle" data-acao="ouvir" aria-pressed="false"><svg aria-hidden="true"><use href="#i-som"/></svg><span data-rotulo="Ouvir" data-rotulo-parar="Parar">Ouvir</span></button>
+            </div>
+        </div>
+        </div>
+
+        <div class="container nav-linha">
+        <a class="logo" href="/index.html">
+            <svg aria-hidden="true"><use href="#logo-azul"/></svg>
+            <span>Passo Certo</span>
+        </a>
+
+        <nav class="nav-desktop" aria-label="Principal">
+            <ul>
+            <li><a href="/index.html">Início</a></li>
+            <li><a href="trilhas.html" aria-current="page">Aprender</a></li>
+            <li><a href="praticar.html">Praticar</a></li>
+            <li><a href="progresso.html">Meu progresso</a></li>
+            <li><a href="ajuda.html" >Ajuda perto de você</a></li>
+            </ul>
+        </nav>
+
+        <div class="acoes-mobile">
+            <button type="button" class="btn-aa" data-acao="abrir" aria-controls="painel-ajustes" aria-expanded="false" aria-label="Ajustes de leitura">Aa</button>
+            <button type="button" class="btn-menu" data-acao="abrir" aria-controls="menu-mobile" aria-expanded="false">
+            <svg aria-hidden="true"><use href="#i-menu"/></svg>Menu
+            </button>
+        </div>
+        </div>
+    </header>
+
+    <!-- header mobile opened -->
+    <div class="menu-mobile" id="menu-mobile" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+        <div class="menu-mobile__topo">
+        <a class="logo" href="/index.html">
+            <svg aria-hidden="true"><use href="#logo-azul"/></svg>
+            <span>Passo Certo</span>
+        </a>
+        <button type="button" class="botao-fechar" data-acao="fechar">
+            <svg aria-hidden="true"><use href="#i-fechar"/></svg>Fechar
+        </button>
+        </div>
+
+        <div class="menu-mobile__corpo">
+        <nav aria-label="Menu principal">
+            <ul class="menu-lista">
+            <li><a href="/index.html">Início<svg aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+            <li><a href="trilhas.html" aria-current="page">Aprender<svg aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+            <li><a href="praticar.html">Praticar<svg aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+            <li><a href="progresso.html" >Meu progresso<svg aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+            <li><a href="ajuda.html">Ajuda perto de você<svg aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+            </ul>
+        </nav>
+
+        <hr>
+
+        <section class="menu-ajustes" aria-labelledby="menu-ajustes-titulo">
+            <h2 class="etiqueta" id="menu-ajustes-titulo">Ajustes de leitura</h2>
+            <div class="ajustes-grade">
+            <button type="button" class="bloco" data-acao="aumentar"><svg aria-hidden="true"><use href="#g-letra"/></svg>Aumentar letra</button>
+            <button type="button" class="bloco" data-acao="diminuir"><svg aria-hidden="true"><use href="#g-menos"/></svg>Diminuir letra</button>
+            <button type="button" class="bloco" data-acao="contraste" aria-pressed="false"><svg aria-hidden="true"><use href="#g-contraste"/></svg>Alto contraste</button>
+            <button type="button" class="bloco" data-acao="ouvir" aria-pressed="false"><svg aria-hidden="true"><use href="#g-som"/></svg><span data-rotulo="Ouvir a página" data-rotulo-parar="Parar a leitura">Ouvir a página</span></button>
+            </div>
+        </section>
+
+        <p class="aviso-seguro">
+            <svg aria-hidden="true"><use href="#i-escudo"/></svg>
+            Nunca pedimos sua senha, seus documentos ou seus dados bancários.
+        </p>
+        </div>
+    </div>
+    </header>
+
+  <main id="conteudo" tabindex="-1">
+    <nav class="migalhas" aria-label="Você está em">
+      <ol>
+        <li><a href="/index.html">Início</a></li>
+        <li>
+          <button type="button" class="link" id="mig-aprender" hidden>Aprender</button>
+          <span id="mig-aprender-atual" aria-current="page">Aprender</span>
+        </li>
+        <li id="mig-trilha-li" hidden><span id="mig-trilha" aria-current="page"></span></li>
+      </ol>
+    </nav>
+
+    <!-- 1. Catálogo -->
+    <section id="tela-catalogo" aria-labelledby="titulo-pagina">
+      <div class="centro bloco-escolha">
+        <p class="chip">Trilhas de aprendizado</p>
+        <div class="centro">
+          <h1 id="titulo-pagina">Aprender passo a passo</h1>
+          <p class="abertura">Cada lição tem até 3 passos. Toque em Ouvir para escutar o texto. Você pode parar e continuar depois: seu progresso fica salvo.</p>
+        </div>
+      </div>
+      <div class="trilhas" id="lista-trilhas" aria-live="polite">
+        <p class="aviso">Carregando as trilhas...</p>
+      </div>
+    </section>
+
+    <!-- 2. Lição -->
+    <section id="tela-licao" hidden aria-labelledby="titulo-trilha-h">
+      <h1 id="titulo-trilha-h"></h1>
+      <p class="subtitulo" id="subtitulo"></p>
+
+      <div class="licao-grade">
+        <aside class="lateral">
+          <nav class="cartao licoes" aria-labelledby="titulo-licoes">
+            <h2 id="titulo-licoes">Suas lições</h2>
+            <div class="barra" role="progressbar" aria-valuemin="0" aria-valuenow="0" aria-valuemax="1" aria-labelledby="legenda-barra"><span id="barra-preenchida"></span></div>
+            <p id="legenda-barra" class="legenda"></p>
+            <ol id="lista-licoes"></ol>
+          </nav>
+          <div class="calma">
+            <h2>Pode ir com calma</h2>
+            <p>Seu progresso fica salvo. Se cansar, pare e volte depois do ponto onde parou.</p>
+          </div>
+        </aside>
+
+        <article class="cartao passo" aria-labelledby="titulo-passo">
+          <div class="passo-topo">
+            <div>
+              <p class="posicao" id="posicao" aria-live="polite"></p>
+              <div class="segmentos" id="segmentos" aria-hidden="true"></div>
+            </div>
+            <button type="button" class="botao botao-escuro" id="ouvir" aria-pressed="false">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>
+              <span id="ouvir-texto">Ouvir este passo</span>
+            </button>
+          </div>
+
+          <div class="ilustracao" id="ilustracao" role="img" aria-label="">
+            <span class="tile" id="icone" aria-hidden="true"></span>
+            <span class="mock" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          </div>
+
+          <h2 id="titulo-passo"></h2>
+          <p class="texto-passo" id="texto-passo"></p>
+
+          <div class="acoes">
+            <button type="button" class="botao botao-leve" id="anterior">Passo anterior</button>
+            <button type="button" class="botao botao-principal" id="proximo">Próximo passo</button>
+            <button type="button" class="botao botao-principal" id="concluir" hidden>Concluir lição</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. Trilha concluída -->
+    <section id="tela-fim" hidden aria-labelledby="titulo-fim">
+      <div class="cartao fim">
+        <span class="fim-selo" aria-hidden="true">✓</span>
+        <h1 id="titulo-fim">Muito bem! Você terminou esta trilha.</h1>
+        <p>Agora que tal praticar? No simulador você faz tudo como se fosse de verdade, sem nenhum risco.</p>
+        <div class="acoes acoes-centro">
+          <a class="botao botao-principal" href="simulador.html">Praticar agora</a>
+          <button type="button" class="botao botao-leve" id="outra-trilha">Escolher outra trilha</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Ícones decorativos das trilhas (o JS copia cada um para o cartão certo) -->
+  <template id="icones">
+    <svg data-icone="marcar-atendimento" viewBox="0 0 120 100" aria-hidden="true" focusable="false">
+      <defs><linearGradient id="gA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6edff"/><stop offset="1" stop-color="#a9bdfc"/></linearGradient></defs>
+      <rect x="48" y="10" width="54" height="52" rx="15" fill="#1d44d6"/>
+      <rect x="14" y="28" width="58" height="58" rx="15" fill="url(#gA)"/>
+      <rect x="27" y="19" width="7" height="15" rx="3.5" fill="#2448e8"/><rect x="51" y="19" width="7" height="15" rx="3.5" fill="#2448e8"/>
+      <path d="M30 58l9 9 18-19" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <svg data-icone="reconhecer-golpes" viewBox="0 0 120 100" aria-hidden="true" focusable="false">
+      <defs><linearGradient id="gB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6edff"/><stop offset="1" stop-color="#a9bdfc"/></linearGradient></defs>
+      <circle cx="84" cy="32" r="26" fill="#1d44d6"/>
+      <path d="M44 16l28 10v26c0 17-13 28-28 36-15-8-28-19-28-36V26z" fill="url(#gB)"/>
+      <path d="M31 54l10 10 18-19" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <svg data-icone="guardar-comprovantes" viewBox="0 0 120 100" aria-hidden="true" focusable="false">
+      <defs><linearGradient id="gC" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6edff"/><stop offset="1" stop-color="#a9bdfc"/></linearGradient></defs>
+      <rect x="60" y="8" width="44" height="62" rx="13" fill="#1d44d6"/>
+      <rect x="14" y="28" width="56" height="58" rx="14" fill="url(#gC)"/>
+      <rect x="26" y="44" width="32" height="7" rx="3.5" fill="#fff"/><rect x="26" y="57" width="32" height="7" rx="3.5" fill="#fff"/><rect x="26" y="70" width="20" height="7" rx="3.5" fill="#fff"/>
+    </svg>
+    <svg data-icone="relogio" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+  </template>
+
+  <p class="sr-only" id="anuncio" role="status" aria-live="polite"></p>
+        <!-- footer -->
+    <footer class="rodape">
+        <div class="container">
+        <div class="rodape__topo">
+            <a class="logo" href="/index.html">
+            <svg aria-hidden="true"><use href="#logo-branco"/></svg>
+            <span>Passo Certo</span>
+            </a>
+            <nav aria-label="Rodapé">
+            <ul>
+                <li><a href="/index.html">Início</a></li>
+                <li><a href="trilhas.html" aria-current="page">Aprender</a></li>
+                <li><a href="praticar.html">Praticar</a></li>
+                <li><a href="progresso.html" >Meu progresso</a></li>
+                <li><a href="ajuda.html">Ajuda perto de você</a></li>
+            </ul>
+            </nav>
+        </div>
+        <hr>
+        <div class="rodape__base">
+            <p class="rodape__aviso">O Passo Certo é um projeto educativo. Não somos um site do governo e nunca pedimos sua senha, seus documentos ou seus dados bancários.</p>
+            <p class="rodape__credito">Projeto Global Solution FIAP, 2026</p>
+        </div>
+        </div>
+    </footer>
+
+    <!-- Mensagens lidas pelo leitor de tela depois de cada ajuste -->
+    <div class="sr-only" id="aviso" aria-live="polite"></div>
+</body>
+</html>
