@@ -1,7 +1,7 @@
 html,
 body{
-    background: #F4F7FF;
-    background: linear-gradient(180deg, rgba(244, 247, 255, 1) 0%, rgba(255, 255, 255, 1) 31%);
+background: #F4F7FF;
+background: linear-gradient(180deg, rgba(244, 247, 255, 1) 0%, rgba(255, 255, 255, 1) 15%);
 }
 .topics{
     display: flex;

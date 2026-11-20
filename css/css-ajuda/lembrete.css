@@ -50,13 +50,7 @@
     #lembrete{
         height: auto;
     }
-    #lembrete h2 {
-        text-align: center;
-        align-self: center;
-    }
-    .lembrete-topic{
-        align-self: center;
-    }
+
     .flex-cards{
         flex-direction: column;
         align-items: center;
@@ -78,8 +72,17 @@
         width: 80%;
     }
 }
-@media (max-width: 850px){
+@media (max-width: 550px){
     .cards{
-        width: 95%;
+        width: 90%;
+        height: 300px;
+        padding-left: 20px;
     }
+    .cards p{
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; 
+    }
+
 }
