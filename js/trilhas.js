@@ -1,28 +1,13 @@
 "use strict";
 
 /* ---------- "Backend" sem banco: um JSON + localStorage ---------- */
-const URL_DADOS = "data/trilhas.json";
-const CHAVE = "passoCertoProgressoV1";   // mesma chave das outras páginas
+const URL_DADOS = "../data/trilhas.json";
 
 let trilhas = [];
 let t = 0, l = 0, p = 0;                 // índices atuais: trilha, lição, passo
 
 const $ = (s) => document.querySelector(s);
 const telas = { catalogo: $("#tela-catalogo"), licao: $("#tela-licao"), fim: $("#tela-fim") };
-
-/* ---------- Progresso salvo no aparelho ---------- */
-function lerTudo() {
-  try { return JSON.parse(localStorage.getItem(CHAVE)) || {}; } catch { return {}; }
-}
-function lerTrilha(id) {
-  return lerTudo()[id] || { completed: [], lastLesson: 0, lastStep: 0, finished: false };
-}
-function salvarTrilha(id, dados) {
-  try {
-    const tudo = lerTudo(); tudo[id] = dados;
-    localStorage.setItem(CHAVE, JSON.stringify(tudo));
-  } catch { /* armazenamento bloqueado: a página segue funcionando */ }
-}
 
 /* ---------- Utilidades ---------- */
 function criar(tag, texto, classe) {
@@ -48,7 +33,7 @@ function mostrar(nome) {
   $("#mig-aprender-atual").hidden = dentro;
   $("#mig-trilha-li").hidden = !dentro;
   if (dentro) $("#mig-trilha").textContent = trilhas[t].titulo;
-  pararAudio();
+  window.PassoCerto.pararLeitura(false);
   const titulo = { catalogo: "#titulo-pagina", licao: "#titulo-trilha-h", fim: "#titulo-fim" }[nome];
   $(titulo).setAttribute("tabindex", "-1"); $(titulo).focus();
   window.scrollTo({ top: 0 });
@@ -64,7 +49,7 @@ function copiarIcone(nome) {          // pega um SVG pronto do <template id="ico
 function desenharCatalogo() {
   const caixa = $("#lista-trilhas"); caixa.replaceChildren();
   trilhas.forEach((tr, i) => {
-    const prog = lerTrilha(tr.id);
+    const prog = progressoLocal.lerTrilha(tr.id);
     const feitas = prog.completed.length, total = tr.licoes.length;
     const card = criar("article", null, "trilha");
 
@@ -99,7 +84,7 @@ function desenharCatalogo() {
 /* ---------- Tela 2: lição ---------- */
 function abrirTrilha(i) {
   t = i;
-  const prog = lerTrilha(trilhas[t].id);
+  const prog = progressoLocal.lerTrilha(trilhas[t].id);
   const ultima = trilhas[t].licoes.length - 1;
   // retoma de onde parou; se já terminou, começa do início para rever
   l = prog.finished ? 0 : Math.min(prog.lastLesson, ultima);
@@ -112,7 +97,7 @@ function desenharLicao() {
   const tr = trilhas[t], licao = tr.licoes[l];
   p = Math.min(p, licao.passos.length - 1);
   const passo = licao.passos[p];
-  const prog = lerTrilha(tr.id);
+  const prog = progressoLocal.lerTrilha(tr.id);
   const feitas = prog.completed.length;
 
   $("#subtitulo").textContent = `Lição ${l + 1} de ${tr.licoes.length} · ${licao.titulo}`;
@@ -156,8 +141,8 @@ function desenharLicao() {
   $("#proximo").hidden = ultimo;
   $("#concluir").hidden = !ultimo;
 
-  salvarTrilha(tr.id, { ...prog, lastLesson: l, lastStep: p });   // guarda onde parou
-  pararAudio();
+  progressoLocal.salvarTrilha(tr.id, { ...prog, lastLesson: l, lastStep: p });   // guarda onde parou
+  window.PassoCerto.pararLeitura(false);
 }
 
 function proximoPasso() { p++; desenharLicao(); focar("#proximo", "#concluir"); }
@@ -171,10 +156,10 @@ function passoAnterior() {
 }
 
 function concluirLicao() {
-  const tr = trilhas[t], prog = lerTrilha(tr.id);
+  const tr = trilhas[t], prog = progressoLocal.lerTrilha(tr.id);
   if (!prog.completed.includes(l)) prog.completed.push(l);
   if (prog.completed.length === tr.licoes.length) {
-    salvarTrilha(tr.id, { completed: prog.completed, lastLesson: 0, lastStep: 0, finished: true });
+    progressoLocal.salvarTrilha(tr.id, { completed: prog.completed, lastLesson: 0, lastStep: 0, finished: true });
     mostrar("fim");
     return;
   }
@@ -182,27 +167,10 @@ function concluirLicao() {
   const depois = tr.licoes.findIndex((_, i) => i > l && !prog.completed.includes(i));
   l = depois !== -1 ? depois : tr.licoes.findIndex((_, i) => !prog.completed.includes(i));
   p = 0;
-  salvarTrilha(tr.id, { ...prog, lastLesson: l, lastStep: 0, finished: false });
+  progressoLocal.salvarTrilha(tr.id, { ...prog, lastLesson: l, lastStep: 0, finished: false });
   desenharLicao();
   anunciar(`Lição concluída. Agora, lição ${l + 1}: ${tr.licoes[l].titulo}.`);
   $("#titulo-passo").setAttribute("tabindex", "-1"); $("#titulo-passo").focus();
-}
-
-/* ---------- Ouvir (Web Speech API) ---------- */
-const temVoz = "speechSynthesis" in window;
-function pararAudio() {
-  if (temVoz) speechSynthesis.cancel();
-  $("#ouvir").setAttribute("aria-pressed", "false");
-  $("#ouvir-texto").textContent = "Ouvir este passo";
-}
-function alternarAudio() {
-  if ($("#ouvir").getAttribute("aria-pressed") === "true") { pararAudio(); anunciar("Áudio parado."); return; }
-  const fala = new SpeechSynthesisUtterance(`${$("#titulo-passo").textContent}. ${$("#texto-passo").textContent}`);
-  fala.lang = "pt-BR"; fala.rate = .9; fala.onend = pararAudio;
-  speechSynthesis.cancel(); speechSynthesis.speak(fala);
-  $("#ouvir").setAttribute("aria-pressed", "true");
-  $("#ouvir-texto").textContent = "Parar áudio";
-  anunciar("O áudio está tocando.");
 }
 
 /* ---------- Início: carrega o JSON (ou a cópia embutida) ---------- */
@@ -232,8 +200,6 @@ async function iniciar() {
 $("#proximo").addEventListener("click", proximoPasso);
 $("#anterior").addEventListener("click", passoAnterior);
 $("#concluir").addEventListener("click", concluirLicao);
-$("#ouvir").addEventListener("click", alternarAudio);
 $("#mig-aprender").addEventListener("click", irParaCatalogo);
 $("#outra-trilha").addEventListener("click", irParaCatalogo);
-if (!temVoz) $("#ouvir").hidden = true;   // sem suporte, o texto continua visível
 iniciar();

@@ -3,7 +3,16 @@ var progressoLocal = (function () {
   'use strict';
 
   var chave = 'passo-certo:progresso';
+  var chaveTrilhas = 'passoCertoProgressoV1';
+  var memoriaTrilhas = {};
   var memoria = {};
+
+  function lerTrilhas() {
+    try {
+      memoriaTrilhas = JSON.parse(localStorage.getItem(chaveTrilhas)) || {};
+    } catch (erro) { /* Usa a memória desta visita. */ }
+    return memoriaTrilhas;
+  }
 
   function ler() {
     try {
@@ -23,6 +32,16 @@ var progressoLocal = (function () {
 
   return {
     ler: ler,
+    lerTrilha: function (id) {
+      return lerTrilhas()[id] || { completed: [], lastLesson: 0, lastStep: 0, finished: false };
+    },
+    salvarTrilha: function (id, progresso) {
+      var trilhas = lerTrilhas();
+      trilhas[id] = progresso;
+      try {
+        localStorage.setItem(chaveTrilhas, JSON.stringify(trilhas));
+      } catch (erro) { /* A página continua funcionando nesta visita. */ }
+    },
     registrarAgendamento: function () {
       var dados = ler();
       dados.agendamentos = (Number(dados.agendamentos) || 0) + 1;
@@ -41,6 +60,8 @@ var progressoLocal = (function () {
     },
     apagar: function () {
       try {
+        localStorage.removeItem(chaveTrilhas);
+        memoriaTrilhas = {};
         localStorage.removeItem(chave);
         memoria = {};
         return true;

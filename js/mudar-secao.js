@@ -18,6 +18,10 @@ const secao10 = document.getElementById('div-cards10');
 const secao11 = document.getElementById('div-cards11');
 const pesqLocal = document.getElementById('pesq-local');
 
+document.querySelector('.regioes-list').addEventListener('click', function (evento) {
+  if (evento.target.closest('.btn-regioes')) window.PassoCerto.pararLeitura(false);
+});
+
 // Adiciona um evento de clique ao botão
 btn1.addEventListener('click', function() {
 

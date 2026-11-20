@@ -5,20 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--CSS-->
-    <link rel="stylesheet" href="/css/ajuda.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../css/ajuda.css">
+    <link rel="stylesheet" href="../css/style.css">
 
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
 
     <!--Script-->
-    <script src="/js/mudar-secao.js" defer></script>
-    <script src="/js/main.js" defer></script>
+    <script src="../js/mudar-secao.js" defer></script>
+    <script src="../js/main.js" defer></script>
 
 
     <title>Ajuda</title>
 </head>
 <body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="logo-azul" viewBox="0 0 52 52"><rect width="52" height="52" rx="16" fill="#1A47E5"/><path d="M11 41V34H19V27H27V20H35V13H41V41H11Z" fill="#fff"/><circle cx="17" cy="17" r="7" fill="#A8C0FF"/><path d="M13.8 17.2l2.4 2.4 4.2-4.8" stroke="#0B1F5C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+    <symbol id="logo-branco" viewBox="0 0 52 52"><rect width="52" height="52" rx="16" fill="#fff"/><path d="M11 41V34H19V27H27V20H35V13H41V41H11Z" fill="#1A47E5"/><circle cx="17" cy="17" r="7" fill="#A8C0FF"/><path d="M13.8 17.2l2.4 2.4 4.2-4.8" stroke="#0B1F5C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+    <symbol id="i-som" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></symbol>
+    <symbol id="i-contraste" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/></symbol>
+    <symbol id="i-fechar" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/></symbol>
+    <symbol id="i-seta" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+    <symbol id="i-escudo" viewBox="0 0 30 30"><path d="M15 3l10 4v7c0 6.5-4.3 11.5-10 13-5.7-1.5-10-6.5-10-13V7l10-4z" fill="#A8C0FF"/><path d="M10.5 15l3.2 3.2 6-6.4" stroke="#0B1F5C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+    <symbol id="g-letra" viewBox="0 0 96 96"><rect x="46" y="12" width="40" height="40" rx="12" fill="#1A47E5"/><rect x="10" y="24" width="60" height="58" rx="16" fill="#BCCDFF" fill-opacity=".62" stroke="#fff" stroke-width="1.5"/><path d="M24 68l12-30 12 30M28.5 58h15" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M66 24v16M58 32h16" stroke="#fff" stroke-width="5" stroke-linecap="round"/></symbol>
+    <symbol id="g-menos" viewBox="0 0 96 96"><rect x="46" y="12" width="40" height="40" rx="12" fill="#1A47E5"/><rect x="10" y="24" width="60" height="58" rx="16" fill="#BCCDFF" fill-opacity=".62" stroke="#fff" stroke-width="1.5"/><path d="M24 68l12-30 12 30M28.5 58h15" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M58 32h16" stroke="#fff" stroke-width="5" stroke-linecap="round"/></symbol>
+    <symbol id="g-contraste" viewBox="0 0 96 96"><circle cx="58" cy="48" r="28" fill="#1A47E5"/><circle cx="38" cy="48" r="28" fill="#BCCDFF" fill-opacity=".62" stroke="#fff" stroke-width="1.5"/></symbol>
+    <symbol id="g-som" viewBox="0 0 96 96"><circle cx="66" cy="38" r="20" fill="#1A47E5"/><rect x="10" y="22" width="60" height="54" rx="16" fill="#BCCDFF" fill-opacity=".62" stroke="#fff" stroke-width="1.5"/><path d="M24 42v14h9l11 9V33l-11 9h-9z" fill="#fff"/><path d="M51 41a10 10 0 0 1 0 16M56 35a18 18 0 0 1 0 28" stroke="#fff" stroke-width="4.5" stroke-linecap="round" fill="none"/></symbol>
+  </svg>
     <a class="pular" href="#conteudo">Pular para o conteúdo</a>
     <header class="cabecalho">
         <div class="barra-acess">
@@ -34,14 +48,14 @@
         </div>
 
         <div class="container nav-linha">
-        <a class="logo" href="/index.html">
+        <a class="logo" href="../index.html">
             <svg aria-hidden="true"><use href="#logo-azul"/></svg>
             <span>Passo Certo</span>
         </a>
 
         <nav class="nav-desktop" aria-label="Principal">
             <ul>
-            <li><a href="/index.html">Início</a></li>
+            <li><a href="../index.html">Início</a></li>
             <li><a href="trilhas.html">Aprender</a></li>
             <li><a href="praticar.html">Praticar</a></li>
             <li><a href="progresso.html">Meu progresso</a></li>
@@ -61,7 +75,7 @@
     <!-- header mobile opened -->
     <div class="menu-mobile" id="menu-mobile" role="dialog" aria-modal="true" aria-label="Menu" hidden>
         <div class="menu-mobile__topo">
-        <a class="logo" href="/index.html">
+        <a class="logo" href="../index.html">
             <svg aria-hidden="true"><use href="#logo-azul"/></svg>
             <span>Passo Certo</span>
         </a>
@@ -73,7 +87,7 @@
         <div class="menu-mobile__corpo">
         <nav aria-label="Menu principal">
             <ul class="menu-lista">
-            <li><a href="/index.html">Início<svg aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+            <li><a href="../index.html">Início<svg aria-hidden="true"><use href="#i-seta"/></svg></a></li>
             <li><a href="trilhas.html">Aprender<svg aria-hidden="true"><use href="#i-seta"/></svg></a></li>
             <li><a href="praticar.html">Praticar<svg aria-hidden="true"><use href="#i-seta"/></svg></a></li>
             <li><a href="progresso.html" >Meu progresso<svg aria-hidden="true"><use href="#i-seta"/></svg></a></li>
@@ -100,7 +114,7 @@
         </div>
     </div>
     </header>
-    <main class="main-content">
+    <main class="main-content" id="conteudo" tabindex="-1">
         <section id="hero-ajuda">
             <div class="box-hero">
                 <div class="topics hero-topic">
@@ -121,7 +135,7 @@
                 </div>
             </div>
             <div class="box-img">
-                <img src="/img/img-hero.png" id="img-ex">
+                <img src="../img/img-hero.png" id="img-ex">
             </div>
         </section>
         <section id="lembrete">
@@ -134,7 +148,7 @@
             </h2>
             <div class="flex-cards">
                 <div class="cards">
-                    <img src="/img/icone_agenda.png" class="icones-img">
+                    <img src="../img/icone_agenda.png" class="icones-img">
                     <h3>
                         Agende antes
                     </h3>
@@ -146,7 +160,7 @@
                     </p>
                 </div>
                 <div class="cards">
-                    <img src="/img/icone_mensagem.png" class="icones-img">
+                    <img src="../img/icone_mensagem.png" class="icones-img">
                     <h3>
                         Leve seus documentos
                     </h3>
@@ -155,7 +169,7 @@
                     </p>
                 </div>
                 <div class="cards">
-                    <img src="/img/icone_horario.png" class="icones-img">
+                    <img src="../img/icone_horario.png" class="icones-img">
                     <h3>
                         Confira o horário
                     </h3>
@@ -198,7 +212,7 @@
             <div class="secao-cards">
                 <div class="cards-flex" id="div-cards1">
                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Casa Verde/Cachoeirinha
                         </h4>
@@ -215,7 +229,7 @@
                         <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
                     </div>
                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Jaçanã
                         </h4>
@@ -232,7 +246,7 @@
                         <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
                     </div>
                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Pirituba
                         </h4>
@@ -251,7 +265,7 @@
                 </div>
                 <div class="cards-flex" id="div-cards2">
                                         <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Santana/Tucuruvi
                         </h4>
@@ -268,7 +282,7 @@
                         <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
                     </div>
                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Vila Maria/Vila Guilherme
                         </h4>
@@ -285,7 +299,7 @@
                         <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
                     </div>
                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Campo Limpo
                         </h4>
@@ -304,7 +318,7 @@
                 </div>
                 <div class="cards-flex" id="div-cards3">
                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Capela do Socorro
                         </h4>
@@ -321,7 +335,7 @@
                         <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
                     </div>
                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Cidade Ademar
                         </h4>
@@ -338,7 +352,7 @@
                         <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
                     </div>
                                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Ipiranga
                         </h4>
@@ -357,7 +371,7 @@
                 </div>
                 <div class="cards-flex" id="div-cards4">
                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Jabaquara
                         </h4>
@@ -374,7 +388,7 @@
                         <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
                     </div>
                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP M'Boi Mirim
                         </h4>
@@ -391,7 +405,7 @@
                         <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
                     </div>
                                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Parelheiros
                         </h4>
@@ -410,7 +424,7 @@
                 </div>
                 <div class="cards-flex" id="div-cards5">
                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Santo Amaro
                         </h4>
@@ -427,7 +441,7 @@
                         <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
                     </div>
                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Vila Mariana
                         </h4>
@@ -444,7 +458,7 @@
                         <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
                     </div>
                                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Aricanduva
                         </h4>
@@ -463,7 +477,7 @@
                 </div>
                 <div class="cards-flex" id="div-cards6">
                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Cidade Tiradentes
                         </h4>
@@ -480,7 +494,7 @@
                         <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
                     </div>
                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Ermelino Matarazzo
                         </h4>
@@ -497,7 +511,7 @@
                         <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
                     </div>
                                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Guaianases
                         </h4>
@@ -516,7 +530,7 @@
                 </div>
                 <div class="cards-flex" id="div-cards7">
                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Itaim Paulista
                         </h4>
@@ -533,7 +547,7 @@
                         <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
                     </div>
                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Itaquera
                         </h4>
@@ -550,7 +564,7 @@
                         <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
                     </div>
                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Mooca
                         </h4>
@@ -569,7 +583,7 @@
                 </div>
                 <div class="cards-flex" id="div-cards8">
                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Penha
                         </h4>
@@ -586,7 +600,7 @@
                         <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
                     </div>
                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP São Mateus
                         </h4>
@@ -603,7 +617,7 @@
                         <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
                     </div>
                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP São Miguel Paulista
                         </h4>
@@ -623,7 +637,7 @@
                 <div class="cards-flex" id="div-cards9">
 
                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Sapopemba
                         </h4>
@@ -640,7 +654,7 @@
                         <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
                     </div>
                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Vila Prudente
                         </h4>
@@ -657,7 +671,7 @@
                         <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
                     </div>
                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Butantã
                         </h4>
@@ -676,7 +690,7 @@
                 </div>
                 <div class="cards-flex" id="div-cards10">
                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Freguesia do Ó/Brasilândia
                         </h4>
@@ -693,7 +707,7 @@
                         <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
                     </div>
                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Lapa
                         </h4>
@@ -710,7 +724,7 @@
                         <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
                     </div>
                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Pinheiros
                         </h4>
@@ -730,7 +744,7 @@
                 <div class="cards-flex" id="div-cards11">
 
                                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP 24 horas
                         </h4>
@@ -747,7 +761,7 @@
                         <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
                     </div>
                     <div class="cards-local">
-                        <img src="/img/icone_local.png" class="icone-local">
+                        <img src="../img/icone_local.png" class="icone-local">
                         <h4>
                             Descomplica SP Sé
                         </h4>
@@ -764,7 +778,7 @@
                         <a href="https://agendadesc.prefeitura.sp.gov.br/agendamento/">Como agendar</a>
                     </div>
                     <div class="cards-local card-local-mais">
-                        <img src="/img/icone_global.png" class="icone-global">
+                        <img src="../img/icone_global.png" class="icone-global">
                         <h4 id="card-local-mais-titulo">Não mora em São Paulo?</h4>
                         <p id="card-local-mais-text">
                             Procure a prefeitura da sua cidade ou o CRAS mais perto de você 
@@ -784,13 +798,13 @@
     <footer class="rodape">
         <div class="container">
         <div class="rodape__topo">
-            <a class="logo" href="/index.html">
+            <a class="logo" href="../index.html">
             <svg aria-hidden="true"><use href="#logo-branco"/></svg>
             <span>Passo Certo</span>
             </a>
             <nav aria-label="Rodapé">
             <ul>
-                <li><a href="/index.html">Início</a></li>
+                <li><a href="../index.html">Início</a></li>
                 <li><a href="trilhas.html">Aprender</a></li>
                 <li><a href="praticar.html">Praticar</a></li>
                 <li><a href="progresso.html" >Meu progresso</a></li>

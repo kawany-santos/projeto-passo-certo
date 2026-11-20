@@ -18,8 +18,8 @@
 
     cartoes.forEach(function (cartao) {
       var barra = cartao.querySelector('progress');
-      var feitas = Number((dados.licoes || {})[cartao.dataset.trilha]) || 0;
-      barra.value = Math.min(barra.max, Math.max(0, Math.floor(feitas)));
+      var feitas = progressoLocal.lerTrilha(cartao.dataset.trilha).completed.length;
+      barra.value = Math.min(barra.max, feitas);
       var completa = barra.value === barra.max;
       var iniciada = barra.value > 0 && !completa;
       if (completa) concluidas++;

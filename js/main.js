@@ -106,10 +106,13 @@
   /* ---------- 2. Leitura em voz alta ---------- */
 
   var voz = 'speechSynthesis' in window ? window.speechSynthesis : null;
-  var lendo = false;
+  var modoLeitura = null;
+  var falaAtual = null;
 
-  function textosDaPagina() {
-    return todos('#conteudo h1, #conteudo h2, #conteudo h3, #conteudo p, #conteudo li strong')
+  function textosDaPagina(modo) {
+    var seletor = modo === 'ouvir-passo' ? '#titulo-passo, #texto-passo' :
+      '#conteudo h1, #conteudo h2, #conteudo h3, #conteudo h4, #conteudo p, #conteudo li strong, #conteudo small';
+    return todos(seletor)
       .filter(function (el) {
         return el.offsetParent !== null && !el.closest('[aria-hidden="true"]');
       })
@@ -125,7 +128,8 @@
   }
 
   function atualizarBotoesOuvir() {
-    todos('[data-acao="ouvir"]').forEach(function (botao) {
+    todos('[data-acao="ouvir"], [data-acao="ouvir-passo"]').forEach(function (botao) {
+      var lendo = botao.dataset.acao === modoLeitura;
       var atributo = botao.getAttribute('role') === 'switch' ? 'aria-checked' : 'aria-pressed';
       botao.setAttribute(atributo, String(lendo));
       var rotulo = botao.querySelector('[data-rotulo]');
@@ -136,46 +140,56 @@
   }
 
   function pararLeitura(avisar) {
-    if (voz) voz.cancel();
-    lendo = false;
+    var ativa = falaAtual;
+    falaAtual = null;
+    modoLeitura = null;
+    if (ativa) voz.cancel();
     atualizarBotoesOuvir();
     if (avisar) anunciar('Leitura parada.');
   }
 
-  function iniciarLeitura() {
-    if (!voz) {
-      anunciar('Este navegador não tem leitura em voz alta. Tente pelo Chrome, Edge ou Safari.');
+  function alternarLeitura(modo) {
+    if (modoLeitura === modo) {
+      pararLeitura(true);
       return;
     }
-    voz.cancel();
-    var trechos = textosDaPagina();
+    pararLeitura(false);
+    if (!voz || !window.SpeechSynthesisUtterance) {
+      anunciar('Leitura em voz alta indisponível neste navegador.');
+      return;
+    }
+    var trechos = textosDaPagina(modo);
+    if (!trechos.length) {
+      anunciar('Nenhum texto disponível para leitura.');
+      return;
+    }
     var vozPt = vozEmPortugues();
+    modoLeitura = modo;
+    atualizarBotoesOuvir();
 
-    /* Um trecho por vez evita que leituras longas sejam cortadas no meio */
-    trechos.forEach(function (texto, indice) {
-      var fala = new SpeechSynthesisUtterance(texto);
+    function falar(indice) {
+      var fala = new SpeechSynthesisUtterance(trechos[indice]);
+      falaAtual = fala;
       fala.lang = 'pt-BR';
       fala.rate = 0.9;
       if (vozPt) fala.voice = vozPt;
-      if (indice === trechos.length - 1) {
-        fala.onend = function () { pararLeitura(false); };
-      }
+      fala.onend = function () {
+        if (falaAtual !== fala) return;
+        falaAtual = null;
+        if (indice + 1 < trechos.length) falar(indice + 1);
+        else pararLeitura(false);
+      };
+      fala.onerror = function () {
+        if (falaAtual !== fala) return;
+        falaAtual = null;
+        pararLeitura(false);
+        anunciar('Não foi possível reproduzir a leitura neste navegador.');
+      };
       voz.speak(fala);
-    });
+    }
 
-    lendo = true;
-    atualizarBotoesOuvir();
-    anunciar('Lendo a página. Toque em Parar quando quiser.');
-  }
-
-  function alternarLeitura() {
-    if (lendo) pararLeitura(true);
-    else iniciarLeitura();
-  }
-
-  /* Algumas vozes só ficam disponíveis depois deste evento */
-  if (voz && 'onvoiceschanged' in voz) {
-    voz.onvoiceschanged = function () {};
+    anunciar('Leitura iniciada.');
+    falar(0);
   }
 
   /* ---------- 3. Menu e painel de ajustes ---------- */
@@ -261,7 +275,8 @@
       case 'diminuir': mudarEscala(estado.escala - 1); break;
       case 'letra-maior': mudarEscala(estado.escala > 0 ? 0 : 2); break;
       case 'contraste': alternarContraste(); break;
-      case 'ouvir': alternarLeitura(); break;
+      case 'ouvir':
+      case 'ouvir-passo': alternarLeitura(alvo.dataset.acao); break;
       case 'abrir': {
         var painel = document.getElementById(alvo.getAttribute('aria-controls'));
         if (painel === aberto) fecharPainel();
@@ -278,7 +293,7 @@
       fecharPainel();
       return;
     }
-    if (evento.key === 'Escape' && lendo) {
+    if (evento.key === 'Escape' && modoLeitura) {
       pararLeitura(true);
       return;
     }
@@ -302,7 +317,7 @@
   else if (telaLarga.addListener) telaLarga.addListener(aoMudarTela);
 
   /* Para a leitura ao sair da página */
-  window.addEventListener('pagehide', function () { if (voz) voz.cancel(); });
+  window.addEventListener('pagehide', function () { pararLeitura(false); });
 
   /* ---------- Início ---------- */
   carregarPreferencias();
